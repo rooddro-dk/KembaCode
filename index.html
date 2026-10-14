@@ -1,80 +1,375 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>White Code — Consultoría en automatización de sistemas</title>
-<meta name="description" content="White Code automatiza los procesos y sistemas de tu empresa.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+
+    <title>White Code — Consultoría en automatización de sistemas</title>
+
+    <meta name="description" content="White Code automatiza los procesos y sistemas de tu empresa.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header>
-  <div class="wrap">
-    <a class="logo" href="#">White Code</a>
-    <nav><a href="#servicios">Servicios</a><a href="#proceso">Proceso</a><a href="#contacto">Contacto</a></nav>
-  </div>
-</header>
- 
-<main>
-  <div class="wrap hero">
-    <h1>Automatizamos lo que tu equipo repite cada día.</h1>
-    <p class="lead">White Code es una consultoría de automatización de sistemas. Conectamos tus herramientas, eliminamos las tareas manuales y dejamos todo documentado.</p>
-    <a class="btn" href="#contacto">Agenda una conversación</a>
- 
-    <div class="live" id="live" aria-label="Ejemplo de tareas que automatizamos">
-      <div class="row"><span>Conciliación de facturas</span><span class="state"><span class="m">Manual</span><span class="a">Automático</span></span></div>
-      <div class="row"><span>Reporte semanal de ventas</span><span class="state"><span class="m">Manual</span><span class="a">Automático</span></span></div>
-      <div class="row"><span>Alta de nuevos clientes</span><span class="state"><span class="m">Manual</span><span class="a">Automático</span></span></div>
-      <div class="row"><span>Sincronización de inventario</span><span class="state"><span class="m">Manual</span><span class="a">Automático</span></span></div>
-    </div>
-  </div>
- 
-  <section id="servicios">
-    <div class="wrap">
-      <h2>Qué hacemos</h2>
-      <div class="item"><h3>Integración de sistemas</h3><p>Conectamos tu ERP, CRM, facturación y hojas de cálculo para que los datos se muevan solos entre ellos.</p></div>
-      <div class="item"><h3>Automatización de procesos</h3><p>Flujos de aprobación, avisos y tareas repetitivas que dejan de depender de que alguien se acuerde.</p></div>
-      <div class="item"><h3>Reportes automáticos</h3><p>Datos consolidados y entregados a tiempo, sin copiar y pegar entre archivos.</p></div>
-      <div class="item"><h3>Bots y scripts a medida</h3><p>Programas pequeños y claros para resolver el trabajo que ninguna herramienta cubre.</p></div>
-      <div class="item"><h3>Monitoreo y soporte</h3><p>Vigilamos que cada automatización siga funcionando y la ajustamos cuando tu negocio cambia.</p></div>
-    </div>
-  </section>
- 
-  <section id="proceso">
-    <div class="wrap">
-      <h2>Cómo trabajamos</h2>
-      <ol class="steps">
-        <li><h3>Diagnóstico</h3><p>Entendemos tus procesos y detectamos qué conviene automatizar primero.</p></li>
-        <li><h3>Diseño</h3><p>Proponemos una solución simple, con alcance y plazos claros.</p></li>
-        <li><h3>Implementación</h3><p>Construimos, probamos con tus datos y lo ponemos en marcha.</p></li>
-        <li><h3>Soporte</h3><p>Medimos resultados, documentamos y acompañamos a tu equipo.</p></li>
-      </ol>
-    </div>
-  </section>
- 
-  <section class="contact" id="contacto">
-    <div class="wrap">
-      <h2>Cuéntanos qué tarea quieres dejar de hacer a mano.</h2>
-      <a class="btn" href="mailto:hola@whitecode.pe">Escribir a hola@whitecode.pe</a>
-    </div>
-  </section>
-</main>
- 
-<footer>
-  <div class="wrap"><span>White Code</span><span>Consultoría en automatización de sistemas</span></div>
-</footer>
- 
-<script>
-(function(){
-  var rows=document.querySelectorAll("#live .row");
-  var still=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if(still){rows.forEach(function(r){r.classList.add("done")});return;}
-  rows.forEach(function(r,i){setTimeout(function(){r.classList.add("done")},900+i*700)});
-})();
-</script>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="wrap">
+
+            <a class="logo" href="#">
+                White Code
+            </a>
+
+            <nav>
+                <a href="#servicios">Servicios</a>
+                <a href="#proceso">Proceso</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="wrap">
+
+                <h1>
+                    Automatizamos lo que tu equipo repite cada día.
+                </h1>
+
+                <p class="lead">
+                    White Code es una consultoría de automatización de sistemas.
+                    Conectamos tus herramientas, eliminamos las tareas manuales
+                    y dejamos todo documentado.
+                </p>
+
+                <a class="btn" href="#contacto">
+                    Agenda una conversación
+                </a>
+
+
+                <!-- EJEMPLO DE AUTOMATIZACIONES -->
+                <div
+                    class="live"
+                    id="live"
+                    aria-label="Ejemplo de tareas que automatizamos"
+                >
+
+                    <div class="row">
+
+                        <span class="task">
+                            Conciliación de facturas
+                        </span>
+
+                        <span class="state">
+                            <span class="m">Manual</span>
+                            <span class="a">Automático</span>
+                        </span>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <span class="task">
+                            Reporte semanal de ventas
+                        </span>
+
+                        <span class="state">
+                            <span class="m">Manual</span>
+                            <span class="a">Automático</span>
+                        </span>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <span class="task">
+                            Alta de nuevos clientes
+                        </span>
+
+                        <span class="state">
+                            <span class="m">Manual</span>
+                            <span class="a">Automático</span>
+                        </span>
+
+                    </div>
+
+
+                    <div class="row">
+
+                        <span class="task">
+                            Sincronización de inventario
+                        </span>
+
+                        <span class="state">
+                            <span class="m">Manual</span>
+                            <span class="a">Automático</span>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SERVICIOS -->
+        <section id="servicios">
+
+            <div class="wrap">
+
+                <h2>
+                    Qué hacemos
+                </h2>
+
+
+                <div class="item">
+
+                    <h3>
+                        Integración de sistemas
+                    </h3>
+
+                    <p>
+                        Conectamos tu ERP, CRM, facturación y hojas de cálculo
+                        para que los datos se muevan solos entre ellos.
+                    </p>
+
+                </div>
+
+
+                <div class="item">
+
+                    <h3>
+                        Automatización de procesos
+                    </h3>
+
+                    <p>
+                        Flujos de aprobación, avisos y tareas repetitivas
+                        que dejan de depender de que alguien se acuerde.
+                    </p>
+
+                </div>
+
+
+                <div class="item">
+
+                    <h3>
+                        Reportes automáticos
+                    </h3>
+
+                    <p>
+                        Datos consolidados y entregados a tiempo,
+                        sin copiar y pegar entre archivos.
+                    </p>
+
+                </div>
+
+
+                <div class="item">
+
+                    <h3>
+                        Bots y scripts a medida
+                    </h3>
+
+                    <p>
+                        Programas pequeños y claros para resolver el trabajo
+                        que ninguna herramienta cubre.
+                    </p>
+
+                </div>
+
+
+                <div class="item">
+
+                    <h3>
+                        Monitoreo y soporte
+                    </h3>
+
+                    <p>
+                        Vigilamos que cada automatización siga funcionando
+                        y la ajustamos cuando tu negocio cambia.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROCESO -->
+        <section id="proceso">
+
+            <div class="wrap">
+
+                <h2>
+                    Cómo trabajamos
+                </h2>
+
+
+                <ol class="steps">
+
+                    <li>
+
+                        <h3>
+                            Diagnóstico
+                        </h3>
+
+                        <p>
+                            Entendemos tus procesos y detectamos qué
+                            conviene automatizar primero.
+                        </p>
+
+                    </li>
+
+
+                    <li>
+
+                        <h3>
+                            Diseño
+                        </h3>
+
+                        <p>
+                            Proponemos una solución simple,
+                            con alcance y plazos claros.
+                        </p>
+
+                    </li>
+
+
+                    <li>
+
+                        <h3>
+                            Implementación
+                        </h3>
+
+                        <p>
+                            Construimos, probamos con tus datos
+                            y lo ponemos en marcha.
+                        </p>
+
+                    </li>
+
+
+                    <li>
+
+                        <h3>
+                            Soporte
+                        </h3>
+
+                        <p>
+                            Medimos resultados, documentamos
+                            y acompañamos a tu equipo.
+                        </p>
+
+                    </li>
+
+                </ol>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACTO -->
+        <section
+            class="contact"
+            id="contacto"
+        >
+
+            <div class="wrap">
+
+                <h2>
+                    Cuéntanos qué tarea quieres dejar de hacer a mano.
+                </h2>
+
+                <a
+                    class="btn"
+                    href="mailto:hola@whitecode.pe"
+                >
+                    Escribir a hola@whitecode.pe
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+
+        <div class="wrap">
+
+            <span>
+                White Code
+            </span>
+
+            <span>
+                Consultoría en automatización de sistemas
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        (function () {
+
+            var rows = document.querySelectorAll("#live .row");
+
+            var reducedMotion = window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches;
+
+
+            if (reducedMotion) {
+
+                rows.forEach(function (row) {
+
+                    row.classList.add("done");
+
+                });
+
+                return;
+            }
+
+
+            rows.forEach(function (row, index) {
+
+                setTimeout(function () {
+
+                    row.classList.add("done");
+
+                }, 900 + index * 700);
+
+            });
+
+        })();
+
+    </script>
+
 </body>
+
 </html>
  
