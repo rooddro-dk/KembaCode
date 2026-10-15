@@ -316,3 +316,18 @@ section img {
     height: 200px;
     object-fit: cover;
 }
+
+.cta {
+  display: inline-block;
+  padding: 15px 24px;
+  background: #111111;
+  color: #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.cta:hover {
+  background: #333333;
+}
