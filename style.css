@@ -321,7 +321,6 @@ section img {
 /* Contenedor de los botones */
 .contact-buttons {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 14px;
