@@ -317,17 +317,66 @@ section img {
     object-fit: cover;
 }
 
-.cta {
-  display: inline-block;
-  padding: 15px 24px;
-  background: #111111;
-  color: #ffffff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.2s ease;
+
+/* Contenedor de los botones */
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
 }
 
-.cta:hover {
+/* Estilo común */
+.contact-buttons .cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 50px;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease,
+              transform 0.2s ease;
+}
+
+.contact-buttons .cta:hover {
+  transform: translateY(-2px);
+}
+
+/* Botón de correo */
+.email-btn {
+  background: #111111;
+  color: #ffffff;
+}
+
+.contact-buttons .email-btn:hover {
   background: #333333;
+}
+
+/* Botón de WhatsApp */
+.whatsapp-btn {
+  background: #25D366;
+  color: #ffffff;
+}
+
+.contact-buttons .whatsapp-btn:hover {
+  background: #1DA851;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 480px) {
+  .contact-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-buttons .cta {
+    width: 100%;
+  }
 }
