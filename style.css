@@ -332,7 +332,6 @@ section img {
 .contact-buttons .cta {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 9px;
   min-height: 50px;
   padding: 14px 22px;
