@@ -165,32 +165,192 @@
 
         <div class="contact-content">
             <div class="contact-info">
-  <span>✉️</span>
-  <h3>Correo electrónico</h3>
-  <a href="mailto:mateochangano25@gmail.com?subject=Consulta%20desde%20White%20Code&body=Hola%20White%20Code,%20quisiera%20más%20información%20sobre%20sus%20servicios.">
-    mateochangano25@gmail.com
-  </a>
-</div>
 
-<div class="contact-item">
-  <span>💬</span>
-  <h3>WhatsApp</h3>
-  <a
-    href="https://wa.me/51931722061?text=Hola%20White%20Code,%20quisiera%20más%20información%20sobre%20sus%20servicios."
-    target="_blank"
-    rel="noopener noreferrer">
-    931722061
-  </a>
-</div>
+<section class="contact-section" id="contacto">
 
-                <div class="info-card"><div>⌖</div><h3>Ubicación</h3><p>Lima, Perú</p></div>
-            </div>
+  <div class="section-heading">
+    <h2>Contáctanos</h2>
+    <p>Estamos listos para ayudarte con tu próximo proyecto.</p>
+  </div>
 
-            <form class="contact-form">
-                <div class="form-group"><input type="text" placeholder="Nombre" required></div>
-                <div class="form-group"><input type="email" placeholder="Correo electrónico" required></div>
-                <div class="form-group"><textarea rows="6" placeholder="Mensaje" required></textarea></div>
-                <button type="submit" class="submit-btn">Enviar mensaje</button>
+  <div class="contact-layout">
+
+    <!-- CONTACTO: CORREO Y WHATSAPP -->
+    <div class="contact-switch">
+
+      <div class="contact-options">
+        <button
+          type="button"
+          class="contact-option active"
+          id="show-email"
+          aria-pressed="true">
+          <span>✉</span>
+          <span>Correo</span>
+        </button>
+
+        <button
+          type="button"
+          class="contact-option"
+          id="show-whatsapp"
+          aria-pressed="false">
+          <span>☏</span>
+          <span>WhatsApp</span>
+        </button>
+      </div>
+
+      <!-- FORMULARIO DE CORREO -->
+      <div class="contact-panel" id="email-panel">
+        <h3>Envíanos un correo</h3>
+        <p>Cuéntanos qué necesitas y nos pondremos en contacto contigo.</p>
+
+        <form id="email-form">
+          <input
+            type="text"
+            id="email-name"
+            placeholder="Tu nombre"
+            autocomplete="name"
+            required>
+
+          <input
+            type="email"
+            id="email-address"
+            placeholder="Tu correo electrónico"
+            autocomplete="email"
+            required>
+
+          <textarea
+            id="email-message"
+            placeholder="Escribe tu mensaje..."
+            required></textarea>
+
+          <button type="submit" class="contact-submit">
+            Enviar por correo
+          </button>
+        </form>
+      </div>
+
+      <!-- FORMULARIO DE WHATSAPP -->
+      <div class="contact-panel" id="whatsapp-panel" hidden>
+        <h3>Hablemos por WhatsApp</h3>
+        <p>Escríbenos directamente para consultar nuestros servicios.</p>
+
+        <form id="whatsapp-form">
+          <input
+            type="text"
+            id="whatsapp-name"
+            placeholder="Tu nombre"
+            autocomplete="name">
+
+          <textarea
+            id="whatsapp-message"
+            placeholder="¿En qué podemos ayudarte?"></textarea>
+
+          <button type="submit"
+            class="contact-submit whatsapp-submit">
+            Continuar a WhatsApp
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- UBICACIÓN -->
+    <div class="contact-location">
+      <h3>Nuestra ubicación</h3>
+
+      <div class="location-info">
+        <span class="location-icon">📍</span>
+
+        <div>
+          <h4>Lima, Perú</h4>
+          <p>Perú</p>
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Lima%2C+Per%C3%BA"
+            target="_blank"
+            rel="noopener noreferrer">
+            Ver en Google Maps ↗
+          </a>
+        </div>
+      </div>
+
+      <iframe
+        class="location-map"
+        src="https://maps.google.com/maps?q=Lima%2C%20Per%C3%BA&z=12&output=embed"
+        title="Mapa de Lima, Perú"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen>
+      </iframe>
+
+      <p class="contact-note">White Code · Lima, Perú</p>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const emailOption = document.getElementById("show-email");
+  const whatsappOption = document.getElementById("show-whatsapp");
+
+  const emailPanel = document.getElementById("email-panel");
+  const whatsappPanel = document.getElementById("whatsapp-panel");
+
+  function showContact(type) {
+    const showEmail = type === "email";
+
+    emailPanel.hidden = !showEmail;
+    whatsappPanel.hidden = showEmail;
+
+    emailOption.classList.toggle("active", showEmail);
+    whatsappOption.classList.toggle("active", !showEmail);
+
+    emailOption.setAttribute("aria-pressed", String(showEmail));
+    whatsappOption.setAttribute("aria-pressed", String(!showEmail));
+  }
+
+  emailOption.addEventListener("click", () => showContact("email"));
+  whatsappOption.addEventListener("click", () => showContact("whatsapp"));
+
+  // CAMBIA ESTOS DATOS POR LOS TUYOS
+  const DESTINO_CORREO = "TU_CORREO@gmail.com";
+  const NUMERO_WHATSAPP = "51987654321";
+
+  document.getElementById("email-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const nombre = document.getElementById("email-name").value.trim();
+    const correo = document.getElementById("email-address").value.trim();
+    const mensaje = document.getElementById("email-message").value.trim();
+
+    const asunto = encodeURIComponent("Consulta desde White Code");
+    const cuerpo = encodeURIComponent(
+      `Nombre: ${nombre}\nCorreo: ${correo}\n\nMensaje:\n${mensaje}`
+    );
+
+    window.location.href =
+      `mailto:${DESTINO_CORREO}?subject=${asunto}&body=${cuerpo}`;
+  });
+
+  document.getElementById("whatsapp-form").addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const nombre = document.getElementById("whatsapp-name").value.trim();
+    const mensaje = document.getElementById("whatsapp-message").value.trim();
+
+    const texto = encodeURIComponent(
+      `Hola White Code, soy ${nombre || "un cliente"}.\n\n` +
+      `${mensaje || "Quisiera información sobre sus servicios."}`
+    );
+
+    window.open(
+      `https://wa.me/${NUMERO_WHATSAPP}?text=${texto}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  });
+</script>
+
             </form>
         </div>
     </div>
