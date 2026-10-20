@@ -158,201 +158,194 @@
 
                 <h2>
                     ¿Qué hacemos?
-                </h2>
-
-
-                <div class="item">
-
-                    <h3>
-                        Integración de sistemas
-                    </h3>
-
-                    <p>
-                        Conectamos tu ERP, CRM, facturación y hojas de cálculo
-                        para que los datos se muevan solos entre ellos.
-                    </p>
-
-                </div>
-
-
-                <div class="item">
-
-                    <h3>
-                        Automatización de procesos
-                    </h3>
-
-                    <p>
-                        Flujos de aprobación, avisos y tareas repetitivas
-                        que dejan de depender de que alguien se acuerde.
-                    </p>
-
-                </div>
-
-
-                <div class="item">
-
-                    <h3>
-                        Reportes automáticos
-                    </h3>
-
-                    <p>
-                        Datos consolidados y entregados a tiempo,
-                        sin copiar y pegar entre archivos.
-                    </p>
-
-                </div>
-
-
-                <div class="item">
-
-                    <h3>
-                        Bots y scripts a medida
-                    </h3>
-
-                    <p>
-                        Programas pequeños y claros para resolver el trabajo
-                        que ninguna herramienta cubre.
-                    </p>
-
-                </div>
-
-
-                <div class="item">
-
-                    <h3>
-                        Monitoreo y soporte
-                    </h3>
-
-                    <p>
-                        Vigilamos que cada automatización siga funcionando
-                        y la ajustamos cuando tu negocio cambia.
-                    </p>
-                    <p>
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- PROCESO -->
-        <section id="proceso">
-
-            <div class="wrap">
-
                 <h2>
-                    Cómo trabajamos
-                </h2>
+<!-- SECCIÓN DE CONTACTO -->
+<section id="contact" class="contact-section">
 
+    <div class="section-heading">
+        <h2 class="section-title">Contáctanos</h2>
+        <p>Cuéntanos tu idea y trabajemos juntos.</p>
+    </div>
 
-                <ol class="steps">
+    <div class="contact-layout">
 
-                    <li>
+        <!-- FORMULARIOS DE CONTACTO -->
+        <div class="contact-switch">
 
-                        <h3>
-                            Diagnóstico
-                        </h3>
+            <div class="contact-options">
+                <button
+                    type="button"
+                    class="contact-option active"
+                    id="show-email"
+                    aria-pressed="true">
+                    ✉ Correo
+                </button>
 
-                        <p>
-                            Entendemos tus procesos y detectamos qué
-                            conviene automatizar primero.
-                        </p>
-
-                    </li>
-
-
-                    <li>
-
-                        <h3>
-                            Diseño
-                        </h3>
-
-                        <p>
-                            Proponemos una solución simple,
-                            con alcance y plazos claros.
-                        </p>
-
-                    </li>
-
-
-                    <li>
-
-                        <h3>
-                            Implementación
-                        </h3>
-
-                        <p>
-                            Construimos, probamos con tus datos
-                            y lo ponemos en marcha.
-                        </p>
-
-                    </li>
-
-
-                    <li>
-
-                        <h3>
-                            Soporte
-                        </h3>
-
-                        <p>
-                            Medimos resultados, documentamos
-                            y acompañamos a tu equipo.
-                        </p>
-
-                    </li>
-
-                </ol>
-
+                <button
+                    type="button"
+                    class="contact-option"
+                    id="show-whatsapp"
+                    aria-pressed="false">
+                    ☎ WhatsApp
+                </button>
             </div>
 
-        </section>
+            <!-- FORMULARIO DE CORREO -->
+            <div class="contact-panel" id="email-panel">
+                <h3>Envíanos un correo</h3>
+                <p>Completa los datos y prepara tu mensaje.</p>
 
+                <form id="email-form">
+                    <input
+                        type="text"
+                        id="email-name"
+                        placeholder="Tu nombre"
+                        autocomplete="name"
+                        required>
 
-        <!-- CONTACTO -->
-        <section
-            class="contact"
-            id="contacto"
-        >
+                    <input
+                        type="email"
+                        id="email-address"
+                        placeholder="Tu correo electrónico"
+                        autocomplete="email"
+                        required>
 
-            <div class="wrap">
+                    <textarea
+                        id="email-message"
+                        placeholder="Escribe tu mensaje..."
+                        required></textarea>
 
-                <h2>
-                    Cuéntanos qué tarea quieres dejar de hacer a mano.
-                </h2>
-
-
-<div class="contact-buttons">
-
-  <!-- Botón de correo -->
-  <a
-    href="mailto:mateochangano25@gmail.com?subject=Solicitud%20de%20cita%20-%20White%20Code&body=Hola%20White%20Code,%0D%0A%0D%0AQuisiera%20agendar%20una%20cita.%0D%0A%0D%0ANombre:%0D%0AFecha%20preferida:%0D%0AHorario:%0D%0A"
-    class="cta email-btn"
-  >
-    <span>✉</span> Agendar por correo
-  </a>
-
-  <!-- Botón de WhatsApp -->
-  <a
-    href="https://wa.me/51931722061?text=Hola%20White%20Code,%20quisiera%20agendar%20una%20cita."
-    class="cta whatsapp-btn"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <span>☏</span> Contactar por WhatsApp
-  </a>
-
-</div>
-
-
+                    <button type="submit" class="contact-submit">
+                        Enviar por correo
+                    </button>
+                </form>
             </div>
 
-        </section>
+            <!-- FORMULARIO DE WHATSAPP -->
+            <div class="contact-panel" id="whatsapp-panel" hidden>
+                <h3>Hablemos por WhatsApp</h3>
+                <p>Escríbenos directamente para consultar nuestros servicios.</p>
 
-    </main>
+                <form id="whatsapp-form">
+                    <input
+                        type="text"
+                        id="whatsapp-name"
+                        placeholder="Tu nombre"
+                        autocomplete="name">
 
+                    <textarea
+                        id="whatsapp-message"
+                        placeholder="¿En qué podemos ayudarte?"></textarea>
+
+                    <button type="submit"
+                        class="contact-submit whatsapp-submit">
+                        Continuar a WhatsApp
+                    </button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- INFORMACIÓN DE UBICACIÓN -->
+        <div class="contact-location">
+            <h3>Nuestra ubicación</h3>
+
+            <div class="location-info">
+                <span class="location-icon">📍</span>
+
+                <div>
+                    <h4>Lima, Perú</h4>
+                    <p>Perú</p>
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=Lima%2C%20Per%C3%BA"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                        Ver en Google Maps ↗
+                    </a>
+                </div>
+            </div>
+
+            <iframe
+                class="location-map"
+                src="https://maps.google.com/maps?q=Lima%2C%20Per%C3%BA&z=12&output=embed"
+                title="Mapa de Lima, Perú"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+            </iframe>
+
+            <p class="contact-note">CodeWhite · Lima, Perú</p>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    // Botones para cambiar entre correo y WhatsApp
+    const emailOption = document.getElementById("show-email");
+    const whatsappOption = document.getElementById("show-whatsapp");
+
+    const emailPanel = document.getElementById("email-panel");
+    const whatsappPanel = document.getElementById("whatsapp-panel");
+
+    function showContact(type) {
+        const showEmail = type === "email";
+
+        emailPanel.hidden = !showEmail;
+        whatsappPanel.hidden = showEmail;
+
+        emailOption.classList.toggle("active", showEmail);
+        whatsappOption.classList.toggle("active", !showEmail);
+
+        emailOption.setAttribute("aria-pressed", String(showEmail));
+        whatsappOption.setAttribute("aria-pressed", String(!showEmail));
+    }
+
+    emailOption.addEventListener("click", () => showContact("email"));
+    whatsappOption.addEventListener("click", () => showContact("whatsapp"));
+
+    // IMPORTANTE: reemplaza estos datos por los reales
+    const DESTINO_CORREO = "TU_CORREO@gmail.com";
+    const NUMERO_WHATSAPP = "51987654321";
+
+    // Enviar consulta por correo
+    document.getElementById("email-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const nombre = document.getElementById("email-name").value.trim();
+        const correo = document.getElementById("email-address").value.trim();
+        const mensaje = document.getElementById("email-message").value.trim();
+
+        const asunto = encodeURIComponent("Consulta desde CodeWhite");
+
+        const cuerpo = encodeURIComponent(
+            `Nombre: ${nombre}\nCorreo: ${correo}\n\nMensaje:\n${mensaje}`
+        );
+
+        window.location.href =
+            `mailto:${DESTINO_CORREO}?subject=${asunto}&body=${cuerpo}`;
+    });
+
+    // Enviar consulta por WhatsApp
+    document.getElementById("whatsapp-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const nombre = document.getElementById("whatsapp-name").value.trim();
+        const mensaje = document.getElementById("whatsapp-message").value.trim();
+
+        const texto = encodeURIComponent(
+            `Hola CodeWhite, soy ${nombre || "un cliente"}.\n\n` +
+            `${mensaje || "Quisiera información sobre sus servicios."}`
+        );
+
+        window.open(
+            `https://wa.me/${NUMERO_WHATSAPP}?text=${texto}`,
+            "_blank",
+            "noopener,noreferrer"
+        );
+    });
+</script>
 
     <!-- PIE DE PÁGINA -->
     <footer>
