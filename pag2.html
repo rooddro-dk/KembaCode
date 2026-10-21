@@ -10,20 +10,6 @@
 
 <div class="app">
 
-<header class="header">
-    <div class="header-container">
-        <a href="#home" class="logo">
-            <span class="logo-text">CODE</span><span class="logo-highlight">WHITE</span>
-        </a>
-
-        <nav class="nav-menu">
-            <a href="#home">Inicio</a>
-            <a href="#services">Servicios</a>
-            <a href="#about">Nosotros</a>
-            <a href="#portfolio">Portafolio</a>
-            <a href="#contact">Contacto</a>
-        </nav>
-
 
 <header class="header">
     <div class="header-container">
@@ -38,7 +24,9 @@
             <a href="#portfolio">Portafolio</a>
             <a href="#contact">Contacto</a>
         </nav>
+    </div>
 </header>
+
 
 <main>
 <section id="home" class="hero">
@@ -416,4 +404,21 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
 </script>
 
 </body>
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+if (menuToggle && navMenu) {
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+}
+
+if (navMenu) {
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
+}
+
 </html>

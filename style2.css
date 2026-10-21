@@ -1600,3 +1600,27 @@ body {
     }
 }
 
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: clip;
+    overflow-y: auto;
+}
+
+.app {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: clip;
+}
+
+main {
+    display: block;
+    width: 100%;
+}
+
+.hero {
+    min-height: 100vh;
+    height: auto;
+}
