@@ -1,9 +1,8 @@
-
 (function () {
 
-    /* ========================================
+    /* ==============================
        MENÚ DE CONTACTO
-    ======================================== */
+    ============================== */
 
     const buttonMenu = document.getElementById("mbtn");
     const panelMenu = document.getElementById("mpanel");
@@ -13,7 +12,6 @@
         buttonMenu.setAttribute("aria-expanded", open);
     }
 
-    // Abrir / cerrar menú
     buttonMenu.addEventListener("click", function (event) {
         event.stopPropagation();
 
@@ -22,19 +20,16 @@
         setMenu(!isOpen);
     });
 
-    // Cerrar al hacer clic fuera
     document.addEventListener("click", function () {
         setMenu(false);
     });
 
-    // Cerrar con Escape
     document.addEventListener("keydown", function (event) {
         if (event.key === "Escape") {
             setMenu(false);
         }
     });
 
-    // Cerrar al seleccionar una opción
     panelMenu.addEventListener("click", function (event) {
         event.stopPropagation();
 
@@ -44,9 +39,9 @@
     });
 
 
-    /* ========================================
+    /* ==============================
        CARRUSEL
-    ======================================== */
+    ============================== */
 
     const carousel = document.getElementById("car");
     const track = carousel.querySelector(".track");
@@ -58,13 +53,12 @@
     let timer;
 
     const dotsContainer = carousel.querySelector(".dots");
-
     const dots = [];
 
 
-    /* ========================================
-       CREAR PUNTOS DEL CARRUSEL
-    ======================================== */
+    /* ==============================
+       CREAR PUNTOS
+    ============================== */
 
     for (let k = 0; k < totalSlides; k++) {
 
@@ -87,9 +81,9 @@
     }
 
 
-    /* ========================================
-       CAMBIAR DE DIAPOSITIVA
-    ======================================== */
+    /* ==============================
+       CAMBIAR SLIDE
+    ============================== */
 
     function goToSlide(index) {
 
@@ -99,8 +93,6 @@
         track.style.transform =
             "translateX(-" + (currentSlide * 100) + "%)";
 
-
-        // Actualizar puntos
         for (let q = 0; q < totalSlides; q++) {
 
             dots[q].setAttribute(
@@ -108,31 +100,23 @@
                 q === currentSlide
             );
 
-
-            // Accesibilidad
             if (q === currentSlide) {
-
                 slides[q].removeAttribute("inert");
-
             } else {
-
                 slides[q].setAttribute("inert", "");
-
             }
         }
     }
 
 
-    /* ========================================
+    /* ==============================
        REPRODUCCIÓN AUTOMÁTICA
-    ======================================== */
+    ============================== */
 
     function playCarousel() {
 
         stopCarousel();
 
-        // No reproducir automáticamente
-        // si el usuario tiene animaciones reducidas.
         if (
             !window.matchMedia(
                 "(prefers-reduced-motion: reduce)"
@@ -140,26 +124,120 @@
         ) {
 
             timer = setInterval(function () {
-
                 goToSlide(currentSlide + 1);
-
             }, 6000);
         }
     }
 
 
-    /* ========================================
+    /* ==============================
        DETENER CARRUSEL
-    ======================================== */
+    ============================== */
 
     function stopCarousel() {
-
         clearInterval(timer);
     }
 
 
-    /* ========================================
-       BOTÓN ANTERIOR
-    ======================================== */
+    /* ==============================
+       BOTONES ANTERIOR / SIGUIENTE
+    ============================== */
 
-       
+    document
+        .getElementById("cprev")
+        .addEventListener("click", function () {
+
+            goToSlide(currentSlide - 1);
+
+        });
+
+    document
+        .getElementById("cnext")
+        .addEventListener("click", function () {
+
+            goToSlide(currentSlide + 1);
+
+        });
+
+
+    /* ==============================
+       PAUSAR AL PASAR EL MOUSE
+    ============================== */
+
+    carousel.addEventListener(
+        "mouseenter",
+        stopCarousel
+    );
+
+    carousel.addEventListener(
+        "mouseleave",
+        playCarousel
+    );
+
+
+    /* ==============================
+       PAUSAR AL USAR EL TECLADO
+    ============================== */
+
+    carousel.addEventListener(
+        "focusin",
+        stopCarousel
+    );
+
+    carousel.addEventListener(
+        "focusout",
+        playCarousel
+    );
+
+
+    /* ==============================
+       DESLIZAR EN CELULAR
+    ============================== */
+
+    let touchStartX = 0;
+
+    carousel.addEventListener(
+        "touchstart",
+        function (event) {
+
+            touchStartX =
+                event.touches[0].clientX;
+
+        },
+        {
+            passive: true
+        }
+    );
+
+    carousel.addEventListener(
+        "touchend",
+        function (event) {
+
+            const touchEndX =
+                event.changedTouches[0].clientX;
+
+            const difference =
+                touchEndX - touchStartX;
+
+            if (Math.abs(difference) > 40) {
+
+                if (difference < 0) {
+                    goToSlide(currentSlide + 1);
+                } else {
+                    goToSlide(currentSlide - 1);
+                }
+
+            }
+
+        }
+    );
+
+
+    /* ==============================
+       INICIAR
+    ============================== */
+
+    goToSlide(0);
+    playCarousel();
+
+})();
