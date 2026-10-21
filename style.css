@@ -26,7 +26,7 @@
 
 
 /* ========================================
-   RESET / BASE
+   CONFIGURACIÓN GENERAL
 ======================================== */
 
 html {
@@ -42,9 +42,14 @@ html {
 
 body {
     margin: 0;
+
     background: var(--bg);
     color: var(--ink);
-    font: 400 1.0625rem/1.7 "Instrument Sans", system-ui, sans-serif;
+
+    font: 400 1.0625rem/1.7
+        "Instrument Sans",
+        system-ui,
+        sans-serif;
 }
 
 a {
@@ -64,10 +69,17 @@ a {
 h1,
 h2,
 h3 {
-    font-family: "Cormorant Garamond", Georgia, serif;
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
     font-weight: 600;
+
     margin: 0;
+
     line-height: 1.05;
+
     letter-spacing: -0.01em;
 }
 
@@ -78,7 +90,9 @@ h3 {
 
 .wrap {
     max-width: 1040px;
+
     margin: 0 auto;
+
     padding: 0 1.5rem;
 }
 
@@ -88,17 +102,41 @@ h3 {
 ======================================== */
 
 header {
-    position: sticky;
-    top: 0;
-    z-index: 5;
-    background: var(--bg);
+    position: fixed;
+
+    top: calc(
+        1rem + env(safe-area-inset-top, 0px)
+    );
+
+    left: 0;
+    right: 0;
+
+    z-index: 10;
+
+    padding: 0 1rem;
 }
 
 header .wrap {
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
-    height: 4.5rem;
+
+    height: 3.6rem;
+
+    max-width: 1100px;
+
+    background: rgba(20, 21, 22, 0.5);
+
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 3rem;
+
+    padding: 0 0.5rem 0 1.6rem;
 }
 
 
@@ -107,10 +145,17 @@ header .wrap {
 ======================================== */
 
 .logo {
-    font-family: "Cormorant Garamond", Georgia, serif;
+    font-family:
+        "Cormorant Garamond",
+        Georgia,
+        serif;
+
     font-weight: 700;
+
     font-size: 1.6rem;
+
     text-decoration: none;
+
     letter-spacing: 0.02em;
 }
 
@@ -121,22 +166,27 @@ header .wrap {
 
 nav {
     display: flex;
+
     align-items: center;
+
     gap: 1.8rem;
 }
 
 nav > a {
     text-decoration: none;
-    color: var(--muted);
+
+    color: var(--ink);
+
+    opacity: 0.75;
 }
 
 nav > a:hover {
-    color: var(--ink);
+    opacity: 1;
 }
 
 
 /* ========================================
-   MENÚ DE CONTACTO
+   MENÚ
 ======================================== */
 
 .menu {
@@ -152,33 +202,55 @@ nav > a:hover {
     display: inline-block;
 
     border: 1px solid var(--red);
+
     cursor: pointer;
 
-    font: 500 1rem "Instrument Sans", sans-serif;
+    font: 500 1rem
+        "Instrument Sans",
+        sans-serif;
 
     background: var(--red);
+
     color: var(--red-ink);
 
-    padding: 0.7rem 1.4rem;
+    padding: 0.7rem 1.6rem;
 
-    border-radius: 0.2rem;
+    border-radius: 3rem;
 
     text-decoration: none;
 }
 
 .btn:hover {
     background: #A33333;
+
     border-color: #A33333;
 }
 
 
+/* Botones grandes del carrusel */
+
+.btn.wide {
+    display: block;
+
+    width: 100%;
+
+    text-align: center;
+
+    border-radius: 0.2rem;
+
+    padding: 1rem;
+}
+
+
 /* ========================================
-   PANEL DEL MENÚ
+   PANEL DE CONTACTO
 ======================================== */
 
 .panel {
     position: absolute;
+
     right: 0;
+
     top: calc(100% + 0.6rem);
 
     min-width: 14.5rem;
@@ -186,6 +258,7 @@ nav > a:hover {
     background: var(--s2);
 
     border: 1px solid var(--line);
+
     border-radius: 0.3rem;
 
     padding: 0.4rem;
@@ -213,25 +286,33 @@ nav > a:hover {
 
 .panel small {
     display: block;
+
     color: var(--muted);
 }
 
 
 /* ========================================
-   CARRUSEL
+   CARRUSEL PRINCIPAL
 ======================================== */
 
 .car {
     position: relative;
 
-    border-radius: 0.4rem;
+    height: 100svh;
+
+    min-height: 34rem;
+
     overflow: hidden;
 
-    margin: 1rem 0 4rem;
+    margin: 0 0 2rem;
+
+    background: var(--bg);
 }
 
 .track {
     display: flex;
+
+    height: 100%;
 
     transition: transform 0.7s ease;
 }
@@ -244,43 +325,88 @@ nav > a:hover {
 .slide {
     flex: 0 0 100%;
 
-    min-height: 31rem;
+    height: 100%;
 
-    padding: 3rem 3rem 5rem;
+    padding:
+        30vh
+        clamp(1.5rem, 6vw, 5rem)
+        0;
 
     display: flex;
-    align-items: center;
+
+    align-items: flex-start;
 
     position: relative;
+
     overflow: hidden;
 
     background: var(--s1);
 }
 
-.slide > div {
+
+/* ========================================
+   TÍTULO DEL SLIDE
+======================================== */
+
+.slide .t {
     position: relative;
+
     z-index: 1;
 
-    max-width: 28rem;
-}
-
-.slide h1,
-.slide h2 {
-    font-size: clamp(2.4rem, 6vw, 4.2rem);
-    margin: 0 0 1rem;
-}
-
-.slide p {
-    color: var(--muted);
-
-    margin: 0 0 1.8rem;
-
-    font-size: 1.15rem;
+    max-width: 46rem;
 }
 
 
 /* ========================================
-   SLIDE PRINCIPAL / SERPIENTE
+   TÍTULOS
+======================================== */
+
+.slide h1,
+.slide h2 {
+    font-size:
+        clamp(2.6rem, 9vw, 7rem);
+
+    text-transform: uppercase;
+
+    line-height: 0.95;
+
+    font-weight: 700;
+
+    margin: 0;
+}
+
+
+/* ========================================
+   PARTE INFERIOR DEL SLIDE
+======================================== */
+
+.foot {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    bottom: 5rem;
+
+    width: min(34rem, 88%);
+
+    text-align: center;
+}
+
+.foot p {
+    margin: 0 0 1rem;
+
+    font-size: 1rem;
+
+    color: var(--ink);
+}
+
+
+/* ========================================
+   SLIDE PRINCIPAL — SERPIENTE
 ======================================== */
 
 .photo {
@@ -292,30 +418,38 @@ nav > a:hover {
 
     position: absolute;
 
-    top: 0;
-    bottom: 0;
-    right: 0;
+    inset: 0;
 
-    width: 68%;
+    background:
+        url("serpiente.jpg")
+        50% 38% / cover;
+}
 
-    background: url("serpiente.jpg") 50% 38% / cover;
+.photo::after {
+    content: "";
 
-    -webkit-mask-image: linear-gradient(
-        to right,
-        transparent,
-        #000 45%
-    );
+    position: absolute;
 
-    mask-image: linear-gradient(
-        to right,
-        transparent,
-        #000 45%
-    );
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(11, 12, 13, 0.85),
+            transparent 45%
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(11, 12, 13, 0.75),
+            rgba(11, 12, 13, 0.15) 60%,
+            rgba(11, 12, 13, 0.5)
+        );
 }
 
 
 /* ========================================
-   OTROS SLIDES
+   COLORES DE LOS SLIDES
 ======================================== */
 
 .s2 {
@@ -332,22 +466,26 @@ nav > a:hover {
 
 
 /* ========================================
-   ILUSTRACIONES SVG
+   ELEMENTOS SVG
 ======================================== */
 
 .art {
     position: absolute;
 
     right: -3rem;
+
     bottom: -3rem;
 
     width: min(30rem, 62%);
+
     height: auto;
 
     fill: none;
 
     stroke: var(--ink);
+
     stroke-opacity: 0.09;
+
     stroke-width: 14;
 }
 
@@ -359,29 +497,35 @@ nav > a:hover {
 .ctrl {
     position: absolute;
 
-    left: 3rem;
-    right: 3rem;
-    bottom: 1.4rem;
+    left: clamp(1.5rem, 6vw, 5rem);
+
+    right: clamp(1.5rem, 6vw, 5rem);
+
+    bottom: 1.6rem;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
-    z-index: 2;
+    z-index: 3;
 }
 
 
 /* ========================================
-   PUNTOS DEL CARRUSEL
+   PUNTOS
 ======================================== */
 
 .dots {
     display: flex;
+
     gap: 0.5rem;
 }
 
 .dots button {
     width: 1.6rem;
+
     height: 0.18rem;
 
     padding: 0;
@@ -397,27 +541,32 @@ nav > a:hover {
 
 .dots button[aria-current="true"] {
     opacity: 0.9;
+
     background: var(--red-ink);
 }
 
 
 /* ========================================
-   FLECHAS DEL CARRUSEL
+   FLECHAS
 ======================================== */
 
 .arrows {
     display: flex;
+
     gap: 0.5rem;
 }
 
 .arrows button {
     width: 2.5rem;
+
     height: 2.5rem;
 
     border: 1px solid var(--line);
+
     border-radius: 50%;
 
     background: var(--bg);
+
     color: var(--ink);
 
     font-size: 1.2rem;
@@ -435,9 +584,11 @@ nav > a:hover {
 ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
+
     .track {
         transition: none;
     }
+
 }
 
 
@@ -450,7 +601,9 @@ section {
 }
 
 h2 {
-    font-size: clamp(2.1rem, 4.5vw, 3rem);
+    font-size:
+        clamp(2.1rem, 4.5vw, 3rem);
+
     margin-bottom: 0.6rem;
 }
 
@@ -471,7 +624,10 @@ h2 {
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(15rem, 1fr));
+        repeat(
+            auto-fit,
+            minmax(15rem, 1fr)
+        );
 
     gap: 1rem;
 }
@@ -484,7 +640,9 @@ h2 {
     min-height: 13rem;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: flex-end;
 
     background: var(--s1);
@@ -502,11 +660,13 @@ h2 {
 
 .tile:nth-child(4) {
     background: #151011;
+
     border-top-color: var(--red);
 }
 
 .tile h3 {
     font-size: 1.6rem;
+
     margin-bottom: 0.4rem;
 }
 
@@ -527,6 +687,7 @@ h2 {
     list-style: none;
 
     margin: 0;
+
     padding: 0;
 }
 
@@ -545,7 +706,11 @@ h2 {
 }
 
 .list strong {
-    font: 600 1.5rem "Cormorant Garamond", Georgia, serif;
+    font:
+        600 1.5rem
+        "Cormorant Garamond",
+        Georgia,
+        serif;
 }
 
 .list span {
@@ -568,19 +733,23 @@ h2 {
 
 .list em.p {
     background: var(--red);
+
     color: var(--red-ink);
 }
 
 
 /* ========================================
-   EQUIPO / COLABORADORES
+   EQUIPO
 ======================================== */
 
 .team {
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(10rem, 1fr));
+        repeat(
+            auto-fit,
+            minmax(10rem, 1fr)
+        );
 
     gap: 2rem 1rem;
 }
@@ -591,6 +760,7 @@ h2 {
 
 .av {
     width: 5rem;
+
     height: 5rem;
 
     border-radius: 50%;
@@ -598,9 +768,14 @@ h2 {
     margin: 0 auto 0.8rem;
 
     display: grid;
+
     place-items: center;
 
-    font: 600 1.6rem "Cormorant Garamond", Georgia, serif;
+    font:
+        600 1.6rem
+        "Cormorant Garamond",
+        Georgia,
+        serif;
 
     background: var(--s2);
 
@@ -609,11 +784,13 @@ h2 {
 
 .person strong {
     display: block;
+
     font-weight: 500;
 }
 
 .person span {
     color: var(--muted);
+
     font-size: 0.95rem;
 }
 
@@ -671,18 +848,10 @@ footer {
     }
 
     .slide {
-        padding: 2rem 1.5rem 5rem;
-        min-height: 28rem;
-    }
-
-    .ctrl {
-        left: 1.5rem;
-        right: 1.5rem;
-    }
-
-    .photo::before {
-        width: 100%;
-        opacity: 0.5;
+        padding:
+            26vh
+            1.5rem
+            0;
     }
 
     .art {
@@ -692,4 +861,9 @@ footer {
     .list li {
         grid-template-columns: 1fr;
     }
+
+    .foot {
+        bottom: 5.5rem;
+    }
+
 }
