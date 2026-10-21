@@ -1,237 +1,399 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
+
+    <!-- =========================
+         CONFIGURACIÓN
+    ========================== -->
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
+    >
 
     <meta name="color-scheme" content="dark">
 
     <title>KembaCode</title>
-    <link rel="icon" type="image/png" href="mambanegra.png">
-    <!-- Fuentes -->
+
+
+    <!-- =========================
+         FAVICON
+    ========================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="mambanegra.png"
+    >
+
+
+    <!-- =========================
+         FUENTES
+    ========================== -->
+
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Instrument+Sans:wght@400;500&display=swap"
         rel="stylesheet"
     >
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+
+
+    <!-- =========================
+         CSS
+    ========================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
 
+
 <body>
+
 
     <!-- =========================
          HEADER
     ========================== -->
+
     <header>
+
         <div class="wrap">
 
-            <a class="logo" href="#inicio">
+            <a
+                class="logo"
+                href="#inicio"
+            >
                 KembaCode
             </a>
 
+
+            <!-- Navegación -->
+
             <nav>
-                <a href="#portafolio">Portafolio</a>
-                <a href="#proyectos">Proyectos</a>
-                <a href="#equipo">Colaboradores</a>
+
+                <a href="#portafolio">
+                    Portafolio
+                </a>
+
+                <a href="#proyectos">
+                    Proyectos
+                </a>
+
+                <a href="#equipo">
+                    Colaboradores
+                </a>
+
 
                 <!-- Menú de contacto -->
+
                 <div class="menu">
 
                     <button
                         class="btn"
                         id="mbtn"
+                        type="button"
                         aria-expanded="false"
                         aria-controls="mpanel"
-                        type="button"
                     >
                         Contáctanos
                     </button>
 
-                    <div class="panel" id="mpanel">
+
+                    <div
+                        class="panel"
+                        id="mpanel"
+                    >
 
                         <a href="mailto:hola@kembacode.com">
                             Correo
-                            <small>hola@kembacode.com</small>
+                            <small>
+                                hola@kembacode.com
+                            </small>
                         </a>
+
 
                         <a href="https://wa.me/51000000000">
                             WhatsApp
-                            <small>Escríbenos un mensaje</small>
+                            <small>
+                                Escríbenos un mensaje
+                            </small>
                         </a>
+
 
                         <a href="#contacto">
                             Cuéntanos tu proyecto
-                            <small>Ir al formulario</small>
+                            <small>
+                                Ir al formulario
+                            </small>
                         </a>
 
                     </div>
+
                 </div>
+
             </nav>
 
         </div>
+
     </header>
 
 
     <!-- =========================
          CONTENIDO PRINCIPAL
     ========================== -->
+
     <main id="inicio">
 
+
         <!-- =========================
-             CARRUSEL PRINCIPAL
+             CARRUSEL
         ========================== -->
-        <div class="wrap">
 
-            <div
-                class="car"
-                id="car"
-                role="region"
-                aria-roledescription="carrusel"
-                aria-label="Presentación de KembaCode"
-            >
+        <div
+            class="car"
+            id="car"
+            role="region"
+            aria-roledescription="carrusel"
+            aria-label="Presentación de KembaCode"
+        >
 
-                <div class="track">
+            <div class="track">
 
-                    <!-- Slide 1 -->
-                    <div class="slide photo">
 
-                        <div>
-                            <h1>
-                                Software que actúa con precisión.
-                            </h1>
+                <!-- =========================
+                     SLIDE 1
+                ========================== -->
 
-                            <p>
-                                Construimos y automatizamos en silencio,
-                                sin ruido y sin errores.
-                            </p>
+                <div class="slide photo">
 
-                            <a class="btn" href="#portafolio">
-                                Ver nuestro trabajo
-                            </a>
-                        </div>
+                    <div class="t">
+
+                        <h1>
+                            Software que actúa con precisión.
+                        </h1>
 
                     </div>
 
 
-                    <!-- Slide 2 -->
-                    <div class="slide s2">
+                    <div class="foot">
 
-                        <div>
-                            <h2>
-                                Lo repetitivo se resuelve solo.
-                            </h2>
+                        <p>
+                            Construimos y automatizamos en silencio,
+                            sin ruido y sin errores.
+                        </p>
 
-                            <p>
-                                Reportes, facturas y avisos que se ejecutan
-                                sin intervención.
-                            </p>
-
-                            <a class="btn" href="#proyectos">
-                                Ver proyectos
-                            </a>
-                        </div>
-
-                        <svg
-                            class="art"
-                            viewBox="0 0 300 300"
-                            aria-hidden="true"
+                        <a
+                            class="btn wide"
+                            href="#portafolio"
                         >
-                            <circle cx="150" cy="150" r="40"></circle>
-                            <circle cx="150" cy="150" r="90"></circle>
-                            <circle cx="150" cy="150" r="140"></circle>
-                        </svg>
-
-                    </div>
-
-
-                    <!-- Slide 3 -->
-                    <div class="slide s3">
-
-                        <div>
-                            <h2>
-                                Aplicaciones a tu medida.
-                            </h2>
-
-                            <p>
-                                Herramientas diseñadas para la forma exacta
-                                en que trabaja tu negocio.
-                            </p>
-
-                            <a class="btn" href="#portafolio">
-                                Ver portafolio
-                            </a>
-                        </div>
-
-                        <svg
-                            class="art"
-                            viewBox="0 0 300 300"
-                            aria-hidden="true"
-                        >
-                            <path d="M0 220 C80 120 140 320 220 200 S300 60 300 60"></path>
-                            <path d="M0 280 C80 180 140 380 220 260 S300 120 300 120"></path>
-                        </svg>
-
-                    </div>
-
-
-                    <!-- Slide 4 -->
-                    <div class="slide s4">
-
-                        <div>
-                            <h2>
-                                Un equipo que no falla.
-                            </h2>
-
-                            <p>
-                                Personas que te acompañan desde la idea
-                                hasta el lanzamiento.
-                            </p>
-
-                            <a class="btn" href="#equipo">
-                                Conoce al equipo
-                            </a>
-                        </div>
-
-                        <svg
-                            class="art"
-                            viewBox="0 0 300 300"
-                            aria-hidden="true"
-                        >
-                            <circle cx="110" cy="150" r="80"></circle>
-                            <circle cx="190" cy="150" r="80"></circle>
-                        </svg>
+                            Ver nuestro trabajo
+                        </a>
 
                     </div>
 
                 </div>
 
 
-                <!-- Controles del carrusel -->
-                <div class="ctrl">
+                <!-- =========================
+                     SLIDE 2
+                ========================== -->
 
-                    <div class="dots"></div>
+                <div class="slide s2">
 
-                    <div class="arrows">
+                    <div class="t">
 
-                        <button
-                            type="button"
-                            id="cprev"
-                            aria-label="Anterior"
-                        >
-                            ‹
-                        </button>
-
-                        <button
-                            type="button"
-                            id="cnext"
-                            aria-label="Siguiente"
-                        >
-                            ›
-                        </button>
+                        <h2>
+                            Lo repetitivo se resuelve solo.
+                        </h2>
 
                     </div>
+
+
+                    <div class="foot">
+
+                        <p>
+                            Reportes, facturas y avisos que se ejecutan
+                            sin intervención.
+                        </p>
+
+                        <a
+                            class="btn wide"
+                            href="#proyectos"
+                        >
+                            Ver proyectos
+                        </a>
+
+                    </div>
+
+
+                    <svg
+                        class="art"
+                        viewBox="0 0 300 300"
+                        aria-hidden="true"
+                    >
+
+                        <circle
+                            cx="150"
+                            cy="150"
+                            r="40"
+                        />
+
+                        <circle
+                            cx="150"
+                            cy="150"
+                            r="90"
+                        />
+
+                        <circle
+                            cx="150"
+                            cy="150"
+                            r="140"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <!-- =========================
+                     SLIDE 3
+                ========================== -->
+
+                <div class="slide s3">
+
+                    <div class="t">
+
+                        <h2>
+                            Aplicaciones a tu medida.
+                        </h2>
+
+                    </div>
+
+
+                    <div class="foot">
+
+                        <p>
+                            Herramientas diseñadas para la forma exacta
+                            en que trabaja tu negocio.
+                        </p>
+
+                        <a
+                            class="btn wide"
+                            href="#portafolio"
+                        >
+                            Ver portafolio
+                        </a>
+
+                    </div>
+
+
+                    <svg
+                        class="art"
+                        viewBox="0 0 300 300"
+                        aria-hidden="true"
+                    >
+
+                        <path
+                            d="M0 220 C80 120 140 320 220 200 S300 60 300 60"
+                        />
+
+                        <path
+                            d="M0 280 C80 180 140 380 220 260 S300 120 300 120"
+                        />
+
+                    </svg>
+
+                </div>
+
+
+                <!-- =========================
+                     SLIDE 4
+                ========================== -->
+
+                <div class="slide s4">
+
+                    <div class="t">
+
+                        <h2>
+                            Un equipo que no falla.
+                        </h2>
+
+                    </div>
+
+
+                    <div class="foot">
+
+                        <p>
+                            Personas que te acompañan desde la idea
+                            hasta el lanzamiento.
+                        </p>
+
+                        <a
+                            class="btn wide"
+                            href="#equipo"
+                        >
+                            Conoce al equipo
+                        </a>
+
+                    </div>
+
+
+                    <svg
+                        class="art"
+                        viewBox="0 0 300 300"
+                        aria-hidden="true"
+                    >
+
+                        <circle
+                            cx="110"
+                            cy="150"
+                            r="80"
+                        />
+
+                        <circle
+                            cx="190"
+                            cy="150"
+                            r="80"
+                        />
+
+                    </svg>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 CONTROLES DEL CARRUSEL
+            ========================== -->
+
+            <div class="ctrl">
+
+                <div class="dots"></div>
+
+
+                <div class="arrows">
+
+                    <button
+                        type="button"
+                        id="cprev"
+                        aria-label="Anterior"
+                    >
+                        ‹
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cnext"
+                        aria-label="Siguiente"
+                    >
+                        ›
+                    </button>
 
                 </div>
 
@@ -243,44 +405,71 @@
         <!-- =========================
              PORTAFOLIO
         ========================== -->
+
         <section id="portafolio">
 
             <div class="wrap">
 
-                <h2>Portafolio</h2>
+                <h2>
+                    Portafolio
+                </h2>
 
                 <p class="sub">
                     Una selección de lo que hemos construido.
                 </p>
 
+
                 <div class="grid">
 
                     <div class="tile">
-                        <h3>Panel de ventas</h3>
+
+                        <h3>
+                            Panel de ventas
+                        </h3>
+
                         <p>
                             Reportes automáticos para una cadena de tiendas.
                         </p>
+
                     </div>
 
+
                     <div class="tile">
-                        <h3>Sistema de reservas</h3>
+
+                        <h3>
+                            Sistema de reservas
+                        </h3>
+
                         <p>
                             Gestión de citas en línea para una clínica.
                         </p>
+
                     </div>
 
+
                     <div class="tile">
-                        <h3>Facturación automática</h3>
+
+                        <h3>
+                            Facturación automática
+                        </h3>
+
                         <p>
                             De pedido a comprobante, sin pasos manuales.
                         </p>
+
                     </div>
 
+
                     <div class="tile">
-                        <h3>Tienda en línea</h3>
+
+                        <h3>
+                            Tienda en línea
+                        </h3>
+
                         <p>
                             Catálogo y pagos para un emprendimiento local.
                         </p>
+
                     </div>
 
                 </div>
@@ -293,64 +482,111 @@
         <!-- =========================
              PROYECTOS
         ========================== -->
+
         <section id="proyectos">
 
             <div class="wrap">
 
-                <h2>Proyectos</h2>
+                <h2>
+                    Proyectos
+                </h2>
 
                 <p class="sub">
                     En lo que estamos trabajando y lo que ya entregamos.
                 </p>
 
+
                 <ul class="list">
 
                     <li>
+
                         <div>
-                            <strong>App de inventario</strong>
+
+                            <strong>
+                                App de inventario
+                            </strong>
+
                             <br>
-                            <span>Control de stock en tiempo real</span>
+
+                            <span>
+                                Control de stock en tiempo real
+                            </span>
+
                         </div>
 
                         <em class="p">
                             En desarrollo
                         </em>
+
                     </li>
 
+
                     <li>
+
                         <div>
-                            <strong>Portal de clientes</strong>
+
+                            <strong>
+                                Portal de clientes
+                            </strong>
+
                             <br>
-                            <span>Seguimiento de pedidos y pagos</span>
+
+                            <span>
+                                Seguimiento de pedidos y pagos
+                            </span>
+
                         </div>
 
                         <em class="p">
                             En desarrollo
                         </em>
+
                     </li>
 
+
                     <li>
+
                         <div>
-                            <strong>Automatización de reportes</strong>
+
+                            <strong>
+                                Automatización de reportes
+                            </strong>
+
                             <br>
-                            <span>Informes semanales enviados por correo</span>
+
+                            <span>
+                                Informes semanales enviados por correo
+                            </span>
+
                         </div>
 
                         <em>
                             Entregado
                         </em>
+
                     </li>
 
+
                     <li>
+
                         <div>
-                            <strong>Sitio web corporativo</strong>
+
+                            <strong>
+                                Sitio web corporativo
+                            </strong>
+
                             <br>
-                            <span>Diseño y desarrollo completo</span>
+
+                            <span>
+                                Diseño y desarrollo completo
+                            </span>
+
                         </div>
 
                         <em>
                             Entregado
                         </em>
+
                     </li>
 
                 </ul>
@@ -363,40 +599,88 @@
         <!-- =========================
              COLABORADORES
         ========================== -->
+
         <section id="equipo">
 
             <div class="wrap">
 
-                <h2>Colaboradores</h2>
+                <h2>
+                    Colaboradores
+                </h2>
 
                 <p class="sub">
                     Las personas y aliados que hacen posible cada proyecto.
                 </p>
 
+
                 <div class="team">
 
-                    <div class="person">
-                        <div class="av">AM</div>
-                        <strong>Nombre Apellido</strong>
-                        <span>Desarrollo</span>
-                    </div>
 
                     <div class="person">
-                        <div class="av">LR</div>
-                        <strong>Nombre Apellido</strong>
-                        <span>Diseño</span>
+
+                        <div class="av">
+                            AM
+                        </div>
+
+                        <strong>
+                            Nombre Apellido
+                        </strong>
+
+                        <span>
+                            Desarrollo
+                        </span>
+
                     </div>
 
-                    <div class="person">
-                        <div class="av">CP</div>
-                        <strong>Nombre Apellido</strong>
-                        <span>Automatización</span>
-                    </div>
 
                     <div class="person">
-                        <div class="av">JT</div>
-                        <strong>Nombre Apellido</strong>
-                        <span>Gestión de proyectos</span>
+
+                        <div class="av">
+                            LR
+                        </div>
+
+                        <strong>
+                            Nombre Apellido
+                        </strong>
+
+                        <span>
+                            Diseño
+                        </span>
+
+                    </div>
+
+
+                    <div class="person">
+
+                        <div class="av">
+                            CP
+                        </div>
+
+                        <strong>
+                            Nombre Apellido
+                        </strong>
+
+                        <span>
+                            Automatización
+                        </span>
+
+                    </div>
+
+
+                    <div class="person">
+
+                        <div class="av">
+                            JT
+                        </div>
+
+                        <strong>
+                            Nombre Apellido
+                        </strong>
+
+                        <span>
+                            Gestión de proyectos
+                        </span>
+
                     </div>
 
                 </div>
@@ -409,9 +693,13 @@
         <!-- =========================
              CONTACTO
         ========================== -->
+
         <div class="wrap">
 
-            <div class="contact" id="contacto">
+            <div
+                class="contact"
+                id="contacto"
+            >
 
                 <h2>
                     ¿Tienes un proyecto en mente?
@@ -439,6 +727,7 @@
     <!-- =========================
          FOOTER
     ========================== -->
+
     <footer>
         © 2026 KembaCode
     </footer>
@@ -447,7 +736,9 @@
     <!-- =========================
          JAVASCRIPT
     ========================== -->
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
