@@ -468,57 +468,5 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     });
 </script>
 
-<script>
-(() => {
-    const themeToggle = document.getElementById("theme-toggle");
-    const themeIcon = document.getElementById("theme-icon");
-    const themeLabel = document.getElementById("theme-label");
-
-    if (!themeToggle || !themeIcon || !themeLabel) return;
-
-    function applyTheme(theme) {
-        const isDark = theme === "dark";
-
-        document.documentElement.setAttribute(
-            "data-theme",
-            isDark ? "dark" : "light"
-        );
-
-        themeIcon.textContent = isDark ? "☀️" : "🌙";
-        themeLabel.textContent = isDark ? "Modo claro" : "Modo oscuro";
-
-        themeToggle.setAttribute(
-            "aria-label",
-            isDark ? "Activar modo claro" : "Activar modo oscuro"
-        );
-
-        themeToggle.setAttribute("aria-pressed", String(isDark));
-
-        try {
-            localStorage.setItem("codewhite-theme", theme);
-        } catch (error) {
-            // El cambio de tema funciona incluso si el almacenamiento está bloqueado.
-        }
-    }
-
-    let savedTheme = "light";
-
-    try {
-        savedTheme = localStorage.getItem("codewhite-theme") || "light";
-    } catch (error) {
-        // Usar modo claro como opción inicial.
-    }
-
-    applyTheme(savedTheme);
-
-    themeToggle.addEventListener("click", () => {
-        const currentTheme =
-            document.documentElement.getAttribute("data-theme");
-
-        applyTheme(currentTheme === "dark" ? "light" : "dark");
-    });
-})();
-</script>
-
 </body>
 </html>
