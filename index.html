@@ -14,7 +14,6 @@
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Instrument+Sans:wght@400;500&display=swap"
         rel="stylesheet"
     >
-    <!--Icono-->
     <link rel="icon" type="image/ico" href="mambanegra.ico">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
@@ -86,4 +85,369 @@
         <div class="wrap">
 
             <div
-                class="car
+                class="car"
+                id="car"
+                role="region"
+                aria-roledescription="carrusel"
+                aria-label="Presentación de KembaCode"
+            >
+
+                <div class="track">
+
+                    <!-- Slide 1 -->
+                    <div class="slide photo">
+
+                        <div>
+                            <h1>
+                                Software que actúa con precisión.
+                            </h1>
+
+                            <p>
+                                Construimos y automatizamos en silencio,
+                                sin ruido y sin errores.
+                            </p>
+
+                            <a class="btn" href="#portafolio">
+                                Ver nuestro trabajo
+                            </a>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Slide 2 -->
+                    <div class="slide s2">
+
+                        <div>
+                            <h2>
+                                Lo repetitivo se resuelve solo.
+                            </h2>
+
+                            <p>
+                                Reportes, facturas y avisos que se ejecutan
+                                sin intervención.
+                            </p>
+
+                            <a class="btn" href="#proyectos">
+                                Ver proyectos
+                            </a>
+                        </div>
+
+                        <svg
+                            class="art"
+                            viewBox="0 0 300 300"
+                            aria-hidden="true"
+                        >
+                            <circle cx="150" cy="150" r="40"></circle>
+                            <circle cx="150" cy="150" r="90"></circle>
+                            <circle cx="150" cy="150" r="140"></circle>
+                        </svg>
+
+                    </div>
+
+
+                    <!-- Slide 3 -->
+                    <div class="slide s3">
+
+                        <div>
+                            <h2>
+                                Aplicaciones a tu medida.
+                            </h2>
+
+                            <p>
+                                Herramientas diseñadas para la forma exacta
+                                en que trabaja tu negocio.
+                            </p>
+
+                            <a class="btn" href="#portafolio">
+                                Ver portafolio
+                            </a>
+                        </div>
+
+                        <svg
+                            class="art"
+                            viewBox="0 0 300 300"
+                            aria-hidden="true"
+                        >
+                            <path d="M0 220 C80 120 140 320 220 200 S300 60 300 60"></path>
+                            <path d="M0 280 C80 180 140 380 220 260 S300 120 300 120"></path>
+                        </svg>
+
+                    </div>
+
+
+                    <!-- Slide 4 -->
+                    <div class="slide s4">
+
+                        <div>
+                            <h2>
+                                Un equipo que no falla.
+                            </h2>
+
+                            <p>
+                                Personas que te acompañan desde la idea
+                                hasta el lanzamiento.
+                            </p>
+
+                            <a class="btn" href="#equipo">
+                                Conoce al equipo
+                            </a>
+                        </div>
+
+                        <svg
+                            class="art"
+                            viewBox="0 0 300 300"
+                            aria-hidden="true"
+                        >
+                            <circle cx="110" cy="150" r="80"></circle>
+                            <circle cx="190" cy="150" r="80"></circle>
+                        </svg>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Controles del carrusel -->
+                <div class="ctrl">
+
+                    <div class="dots"></div>
+
+                    <div class="arrows">
+
+                        <button
+                            type="button"
+                            id="cprev"
+                            aria-label="Anterior"
+                        >
+                            ‹
+                        </button>
+
+                        <button
+                            type="button"
+                            id="cnext"
+                            aria-label="Siguiente"
+                        >
+                            ›
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             PORTAFOLIO
+        ========================== -->
+        <section id="portafolio">
+
+            <div class="wrap">
+
+                <h2>Portafolio</h2>
+
+                <p class="sub">
+                    Una selección de lo que hemos construido.
+                </p>
+
+                <div class="grid">
+
+                    <div class="tile">
+                        <h3>Panel de ventas</h3>
+                        <p>
+                            Reportes automáticos para una cadena de tiendas.
+                        </p>
+                    </div>
+
+                    <div class="tile">
+                        <h3>Sistema de reservas</h3>
+                        <p>
+                            Gestión de citas en línea para una clínica.
+                        </p>
+                    </div>
+
+                    <div class="tile">
+                        <h3>Facturación automática</h3>
+                        <p>
+                            De pedido a comprobante, sin pasos manuales.
+                        </p>
+                    </div>
+
+                    <div class="tile">
+                        <h3>Tienda en línea</h3>
+                        <p>
+                            Catálogo y pagos para un emprendimiento local.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROYECTOS
+        ========================== -->
+        <section id="proyectos">
+
+            <div class="wrap">
+
+                <h2>Proyectos</h2>
+
+                <p class="sub">
+                    En lo que estamos trabajando y lo que ya entregamos.
+                </p>
+
+                <ul class="list">
+
+                    <li>
+                        <div>
+                            <strong>App de inventario</strong>
+                            <br>
+                            <span>Control de stock en tiempo real</span>
+                        </div>
+
+                        <em class="p">
+                            En desarrollo
+                        </em>
+                    </li>
+
+                    <li>
+                        <div>
+                            <strong>Portal de clientes</strong>
+                            <br>
+                            <span>Seguimiento de pedidos y pagos</span>
+                        </div>
+
+                        <em class="p">
+                            En desarrollo
+                        </em>
+                    </li>
+
+                    <li>
+                        <div>
+                            <strong>Automatización de reportes</strong>
+                            <br>
+                            <span>Informes semanales enviados por correo</span>
+                        </div>
+
+                        <em>
+                            Entregado
+                        </em>
+                    </li>
+
+                    <li>
+                        <div>
+                            <strong>Sitio web corporativo</strong>
+                            <br>
+                            <span>Diseño y desarrollo completo</span>
+                        </div>
+
+                        <em>
+                            Entregado
+                        </em>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COLABORADORES
+        ========================== -->
+        <section id="equipo">
+
+            <div class="wrap">
+
+                <h2>Colaboradores</h2>
+
+                <p class="sub">
+                    Las personas y aliados que hacen posible cada proyecto.
+                </p>
+
+                <div class="team">
+
+                    <div class="person">
+                        <div class="av">AM</div>
+                        <strong>Nombre Apellido</strong>
+                        <span>Desarrollo</span>
+                    </div>
+
+                    <div class="person">
+                        <div class="av">LR</div>
+                        <strong>Nombre Apellido</strong>
+                        <span>Diseño</span>
+                    </div>
+
+                    <div class="person">
+                        <div class="av">CP</div>
+                        <strong>Nombre Apellido</strong>
+                        <span>Automatización</span>
+                    </div>
+
+                    <div class="person">
+                        <div class="av">JT</div>
+                        <strong>Nombre Apellido</strong>
+                        <span>Gestión de proyectos</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACTO
+        ========================== -->
+        <div class="wrap">
+
+            <div class="contact" id="contacto">
+
+                <h2>
+                    ¿Tienes un proyecto en mente?
+                </h2>
+
+                <p>
+                    Cuéntanos qué quieres lograr y te respondemos
+                    con una propuesta.
+                </p>
+
+                <a
+                    class="btn"
+                    href="mailto:hola@kembacode.com"
+                >
+                    Escríbenos
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer>
+        © 2026 KembaCode
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+    <script src="script.js"></script>
+
+</body>
+</html>
