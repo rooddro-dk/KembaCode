@@ -26,6 +26,13 @@
 
         <button class="menu-toggle" aria-label="Abrir menú">☰</button>
     </div>
+    <button class="theme-toggle" id="theme-toggle"
+        type="button" aria-label="Activar modo oscuro"
+        aria-pressed="false" title="Cambiar tema">
+    <span id="theme-icon" aria-hidden="true">🌙</span>
+</button>
+
+<button class="menu-toggle" aria-label="Abrir menú">☰</button>
 </header>
 
 <main>
@@ -401,6 +408,46 @@ menuToggle.addEventListener('click', () => {
 document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => navMenu.classList.remove('active'));
 });
+</script>
+
+<script>
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = document.getElementById("theme-icon");
+
+    // Recuperar el tema guardado o usar el modo claro
+    const savedTheme = localStorage.getItem("codewhite-theme");
+    const initialTheme = savedTheme || "light";
+
+    function applyTheme(theme) {
+        const isDark = theme === "dark";
+
+        document.documentElement.setAttribute(
+            "data-theme",
+            isDark ? "dark" : "light"
+        );
+
+        themeIcon.textContent = isDark ? "☀️" : "🌙";
+
+        themeToggle.setAttribute(
+            "aria-label",
+            isDark ? "Activar modo claro" : "Activar modo oscuro"
+        );
+
+        themeToggle.setAttribute("aria-pressed", String(isDark));
+
+        localStorage.setItem("codewhite-theme", theme);
+    }
+
+    // Aplicar el tema inicial
+    applyTheme(initialTheme);
+
+    // Cambiar entre modo claro y oscuro
+    themeToggle.addEventListener("click", () => {
+        const currentTheme =
+            document.documentElement.getAttribute("data-theme");
+
+        applyTheme(currentTheme === "dark" ? "light" : "dark");
+    });
 </script>
 
 </body>
