@@ -381,18 +381,320 @@ h2 {
   max-width: 32rem;
 }
 /* ==============================
-   PORTAFOLIO - MODIFICADO
+   PORTAFOLIO - ESTILO VISUAL
 ============================== */
-.tile-img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    display: block;
-    border-bottom: 1px solid var(--line);
+
+.portfolio-section {
+  padding: 7rem 0 8rem;
+  background: var(--bg);
+  overflow: hidden;
 }
 
-.tile-details {
-    padding: 1.5rem;
+.portfolio-container {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+/* ==============================
+   ENCABEZADO
+============================== */
+
+.portfolio-header {
+  margin-bottom: 4.5rem;
+}
+
+.portfolio-header h2 {
+  max-width: 850px;
+
+  font-family:
+    "Instrument Sans",
+    system-ui,
+    sans-serif;
+
+  font-size: clamp(3rem, 6vw, 5.5rem);
+
+  font-weight: 400;
+
+  line-height: 0.98;
+
+  letter-spacing: -0.045em;
+
+  color: #ffffff;
+
+  margin: 0;
+}
+
+.portfolio-header p {
+  max-width: 550px;
+
+  margin-top: 1.5rem;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 1rem;
+
+  line-height: 1.6;
+}
+
+
+/* ==============================
+   GRID
+============================== */
+
+.portfolio-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 40px;
+}
+
+
+/* ==============================
+   TARJETA
+============================== */
+
+.portfolio-card {
+  position: relative;
+
+  height: 580px;
+
+  overflow: hidden;
+
+  border-radius: 8px;
+
+  background-size: cover;
+
+  background-position: center;
+
+  color: #ffffff;
+
+  transition:
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s ease;
+
+  isolation: isolate;
+}
+
+
+/* ==============================
+   IMÁGENES
+============================== */
+
+.portfolio-dominios {
+  background-image:
+    url("https://images.unsplash.com/photo-1557682250-33bd709cbe85?auto=format&fit=crop&w=1200&q=85");
+}
+
+.portfolio-tienda {
+  background-image:
+    url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85");
+}
+
+.portfolio-servicios {
+  background-image:
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85");
+}
+
+.portfolio-reservas {
+  background-image:
+    url("https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=85");
+}
+
+
+/* ==============================
+   OSCURECIMIENTO
+============================== */
+
+.portfolio-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.55) 0%,
+      rgba(0, 0, 0, 0.05) 45%,
+      rgba(0, 0, 0, 0.55) 100%
+    );
+
+  transition:
+    background 0.45s ease;
+}
+
+
+/* ==============================
+   CONTENIDO
+============================== */
+
+.portfolio-content {
+  position: relative;
+
+  z-index: 2;
+
+  padding: 25px;
+}
+
+.portfolio-content h3 {
+  margin: 0 0 0.6rem;
+
+  font-family:
+    "Instrument Sans",
+    system-ui,
+    sans-serif;
+
+  font-size: 1.55rem;
+
+  font-weight: 600;
+
+  letter-spacing: -0.02em;
+
+  color: #ffffff;
+}
+
+.portfolio-content p {
+  max-width: 310px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 0.82rem;
+
+  line-height: 1.45;
+}
+
+
+/* ==============================
+   FLECHA
+============================== */
+
+.portfolio-arrow {
+  position: absolute;
+
+  right: 25px;
+  bottom: 22px;
+
+  z-index: 3;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  text-decoration: none;
+
+  font-size: 1.4rem;
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* ==============================
+   HOVER
+============================== */
+
+.portfolio-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+.portfolio-card:hover .portfolio-overlay {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.65),
+      rgba(0, 0, 0, 0.12) 45%,
+      rgba(0, 0, 0, 0.65)
+    );
+}
+
+.portfolio-card:hover .portfolio-arrow {
+  transform: translateX(5px);
+
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* ==============================
+   TABLET
+============================== */
+
+@media (max-width: 1100px) {
+
+  .portfolio-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+  }
+
+  .portfolio-card {
+    height: 500px;
+  }
+
+}
+
+
+/* ==============================
+   MÓVIL
+============================== */
+
+@media (max-width: 640px) {
+
+  .portfolio-section {
+    padding: 5rem 0;
+  }
+
+  .portfolio-container {
+    padding: 0 15px;
+  }
+
+  .portfolio-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .portfolio-header h2 {
+    font-size: 3rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+  .portfolio-card {
+    height: 480px;
+  }
+
+  .portfolio-content {
+    padding: 22px;
+  }
+
 }
 /* ==============================
    PROYECTOS
@@ -432,9 +734,7 @@ h2 {
   background: var(--accent);
   color: var(--deep);
 }
-/* ==============================
-   SECCIÓN COLABORADORES (LLAMATIVO)
-============================== */
+
 /* ==============================
    SECCIÓN COLABORADORES
 ============================== */
