@@ -456,39 +456,88 @@ h2 {
   background: var(--accent);
   color: var(--deep);
 }
-/* ==============================
-   EQUIPO
-============================== */
+/* --- SECCIÓN COLABORADORES --- */
+.colaboradores-section {
+    padding: 60px 20px;
+    background-color: #f7f6f2; /* Fondo claro similar al actual */
+    font-family: 'Hanken Grotesk', sans-serif;
+}
 
-.team {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  gap: 2rem 1rem;
+.colaboradores-container {
+    max-width: 1100px;
+    margin: 0 auto;
 }
-.person {
-  text-align: center;
+
+.colaboradores-header {
+    margin-bottom: 40px;
 }
-.av {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  margin: 0 auto 0.8rem;
-  display: grid;
-  place-items: center;
-  font:
-    600 1.6rem "Cormorant Garamond",
-    Georgia,
-    serif;
-  background: var(--s2);
-  border: 1px solid var(--line);
+
+.colaboradores-header h2 {
+    font-size: 2.2rem;
+    color: #1a2b32;
+    margin-bottom: 8px;
+    font-weight: 700;
 }
-.person strong {
-  display: block;
-  font-weight: 500;
+
+.colaboradores-header p {
+    color: #667085;
+    font-size: 1rem;
 }
-.person span {
-  color: var(--muted);
-  font-size: 0.95rem;
+
+/* Grilla adaptable */
+.colaboradores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+/* Tarjeta individual */
+.card-colaborador {
+    background: #ffffff;
+    padding: 28px 20px;
+    border-radius: 16px;
+    text-align: center;
+    border: 1px solid #e4e7ec;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-colaborador:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Círculo del Avatar */
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e2f1e7 0%, #c8e6d2 100%);
+    color: #1a2b32;
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px auto;
+}
+
+.card-colaborador h3 {
+    font-size: 1.1rem;
+    color: #1a2b32;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* Etiqueta del Relleno/Puesto */
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: #f0f4f8;
+    color: #007acc;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-radius: 20px;
 }
 /* ==============================
    CONTACTO
