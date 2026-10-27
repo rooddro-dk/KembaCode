@@ -456,88 +456,93 @@ h2 {
   background: var(--accent);
   color: var(--deep);
 }
-/* --- SECCIÓN COLABORADORES --- */
+/* ==============================
+   SECCIÓN COLABORADORES
+============================== */
 .colaboradores-section {
-    padding: 60px 20px;
-    background-color: #f7f6f2; /* Fondo claro similar al actual */
-    font-family: 'Hanken Grotesk', sans-serif;
+  padding: 4rem 0;
+  background-color: var(--s1);
 }
 
 .colaboradores-container {
-    max-width: 1100px;
-    margin: 0 auto;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 .colaboradores-header {
-    margin-bottom: 40px;
+  margin-bottom: 2.5rem;
 }
 
 .colaboradores-header h2 {
-    font-size: 2.2rem;
-    color: #1a2b32;
-    margin-bottom: 8px;
-    font-weight: 700;
+  font-size: clamp(2.1rem, 4.5vw, 3rem);
+  color: var(--ink);
+  margin-bottom: 0.6rem;
 }
 
 .colaboradores-header p {
-    color: #667085;
-    font-size: 1rem;
+  color: var(--muted);
+  margin: 0;
+  max-width: 32rem;
 }
 
-/* Grilla adaptable */
+/* Grilla adaptable utilizando variables del sitio */
 .colaboradores-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1.5rem;
 }
 
-/* Tarjeta individual */
+/* Tarjeta individual alineada a las .tile del portafolio */
 .card-colaborador {
-    background: #ffffff;
-    padding: 28px 20px;
-    border-radius: 16px;
-    text-align: center;
-    border: 1px solid #e4e7ec;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fbfaf8;
+  padding: 2rem 1.2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  border: 1px solid var(--line);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-colaborador:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+  border-color: var(--deep);
+  box-shadow: 0 8px 20px rgba(18, 52, 63, 0.08);
 }
 
 /* Círculo del Avatar */
 .avatar {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #e2f1e7 0%, #c8e6d2 100%);
-    color: #1a2b32;
-    font-size: 1.4rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px auto;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: var(--s2);
+  color: var(--deep);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem auto;
+  border: 1px solid var(--line);
 }
 
 .card-colaborador h3 {
-    font-size: 1.1rem;
-    color: #1a2b32;
-    margin-bottom: 8px;
-    font-weight: 600;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
-/* Etiqueta del Relleno/Puesto */
+/* Etiqueta / Rol */
 .badge {
-    display: inline-block;
-    padding: 4px 12px;
-    background-color: #f0f4f8;
-    color: #007acc;
-    font-size: 0.85rem;
-    font-weight: 500;
-    border-radius: 20px;
+  display: inline-block;
+  padding: 0.25rem 0.8rem;
+  background-color: var(--s3);
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 500;
+  border-radius: 0.3rem;
 }
 /* ==============================
    CONTACTO
