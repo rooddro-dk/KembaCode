@@ -435,131 +435,308 @@ h2 {
 /* ==============================
    SECCIÓN COLABORADORES (LLAMATIVO)
 ============================== */
+/* ==============================
+   SECCIÓN COLABORADORES
+============================== */
+
 .colaboradores-section {
-  padding: 5rem 0;
-  background: linear-gradient(180deg, var(--s1) 0%, var(--bg) 100%);
+  padding: 7rem 0;
+  background: var(--bg);
   position: relative;
+  overflow: hidden;
 }
 
 .colaboradores-container {
-  max-width: 1040px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
+
+/* ==============================
+   ENCABEZADO
+============================== */
+
 .colaboradores-header {
   text-align: center;
-  margin-bottom: 3.5rem;
+  max-width: 650px;
+  margin: 0 auto 4rem;
+}
+
+.equipo-label {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.4rem 1rem;
+
+  border: 1px solid var(--line);
+  border-radius: 2rem;
+
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
 }
 
 .colaboradores-header h2 {
-  font-size: clamp(2.3rem, 5vw, 3.2rem);
+  margin-bottom: 1rem;
+
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 0.95;
   color: var(--ink);
-  margin-bottom: 0.8rem;
 }
 
 .colaboradores-header p {
-  color: var(--muted);
+  max-width: 560px;
   margin: 0 auto;
-  max-width: 30rem;
-  font-size: 1.05rem;
+
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
-/* Grilla responsive */
+
+/* ==============================
+   GRID
+============================== */
+
 .colaboradores-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.8rem;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 1.5rem;
 }
 
-/* Tarjeta principal interactiva */
+
+/* ==============================
+   TARJETA
+============================== */
+
 .card-colaborador {
   position: relative;
+
+  min-height: 390px;
+
+  padding: 3rem 2rem 2.5rem;
+
   background: #ffffff;
-  padding: 2.2rem 1.5rem 1.8rem;
-  border-radius: 1.2rem;
-  text-align: center;
+
   border: 1px solid var(--line);
+  border-radius: 1.5rem;
+
+  text-align: center;
+
   overflow: hidden;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 15px rgba(18, 52, 63, 0.04);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
 }
 
-/* Barra superior de color decorativa */
+
+/* Línea superior */
+
 .card-colaborador::before {
   content: "";
+
   position: absolute;
+
   top: 0;
   left: 0;
   right: 0;
-  height: 5px;
-  background: linear-gradient(90deg, var(--s2), var(--accent), var(--s3));
+
+  height: 4px;
+
+  background: linear-gradient(
+    90deg,
+    var(--s2),
+    var(--accent),
+    var(--s3)
+  );
+
   transition: height 0.3s ease;
 }
 
-/* Efecto hover: elevación y brillo */
+
+/* Hover */
+
 .card-colaborador:hover {
-  transform: translateY(-8px);
-  border-color: rgba(18, 52, 63, 0.25);
-  box-shadow: 0 14px 30px rgba(18, 52, 63, 0.12);
+  transform: translateY(-10px);
+
+  border-color: rgba(18, 52, 63, 0.2);
+
+  box-shadow:
+    0 20px 45px rgba(18, 52, 63, 0.12);
 }
 
 .card-colaborador:hover::before {
-  height: 8px;
+  height: 7px;
 }
 
-/* Contenedor del Avatar con brillo */
+
+/* ==============================
+   AVATAR
+============================== */
+
 .avatar-wrap {
+  width: 105px;
+  height: 105px;
+
+  margin: 0 auto 1.5rem;
+
   position: relative;
-  width: 5.2rem;
-  height: 5.2rem;
-  margin: 0 auto 1.2rem;
 }
 
 .avatar {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--s2) 100%);
-  color: var(--deep);
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.8rem;
-  font-weight: 700;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.8), 0 6px 16px rgba(18, 52, 63, 0.1);
-  transition: transform 0.3s ease;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--accent),
+      var(--s2)
+    );
+
+  color: var(--deep);
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 2.3rem;
+  font-weight: 700;
+
+  border: 5px solid #ffffff;
+
+  box-shadow:
+    0 0 0 1px var(--line),
+    0 12px 30px rgba(18, 52, 63, 0.12);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .card-colaborador:hover .avatar {
-  transform: scale(1.08) rotate(-3deg);
+  transform: scale(1.07);
+
+  box-shadow:
+    0 0 0 1px var(--accent),
+    0 15px 35px rgba(18, 52, 63, 0.16);
 }
 
-.card-colaborador h3 {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.6rem;
+
+/* ==============================
+   INFORMACIÓN
+============================== */
+
+.colaborador-info h3 {
+  margin-bottom: 0.8rem;
+
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: 1.8rem;
+
   color: var(--ink);
-  margin-bottom: 0.6rem;
-  font-weight: 700;
 }
 
-/* Badge con acento de color llamativo */
+
+/* ==============================
+   CARGO
+============================== */
+
 .badge {
   display: inline-block;
-  padding: 0.35rem 1rem;
-  background: var(--s3);
-  color: var(--deep);
-  font-size: 0.85rem;
-  font-weight: 600;
+
+  padding: 0.4rem 1rem;
+
   border-radius: 2rem;
-  letter-spacing: 0.02em;
-  transition: background 0.3s ease, color 0.3s ease;
+
+  background: var(--s3);
+
+  color: var(--deep);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 .card-colaborador:hover .badge {
   background: var(--accent);
-  color: var(--deep);
+  transform: translateY(-2px);
+}
+
+
+/* ==============================
+   DESCRIPCIÓN
+============================== */
+
+.colaborador-info p {
+  max-width: 260px;
+
+  margin: 1.5rem auto 0;
+
+  color: var(--muted);
+
+  font-size: 0.92rem;
+
+  line-height: 1.7;
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 800px) {
+
+  .colaboradores-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .card-colaborador {
+    min-height: auto;
+  }
+
+}
+
+@media (max-width: 640px) {
+
+  .colaboradores-section {
+    padding: 5rem 0;
+  }
+
+  .colaboradores-header {
+    margin-bottom: 3rem;
+  }
+
+  .colaboradores-header h2 {
+    font-size: 2.6rem;
+  }
+
+  .card-colaborador {
+    padding: 2.5rem 1.5rem;
+  }
+
 }
 /* ==============================
    CONTACTO (LLAMATIVO Y REORGANIZADO)
