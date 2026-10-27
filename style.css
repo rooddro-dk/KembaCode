@@ -586,22 +586,103 @@ h2 {
   color: var(--deep);
 }
 /* ==============================
-   CONTACTO
+   CONTACTO (LLAMATIVO Y REORGANIZADO)
 ============================== */
-
 .contact {
   text-align: center;
   background: var(--deep);
   color: #f6f4f0;
-  border-top: 3px solid var(--accent);
-  border-radius: 0.3rem;
-  padding: 4rem 1.5rem;
-  margin: 2rem 0;
+  border-top: 4px solid var(--accent);
+  border-radius: 1.2rem;
+  padding: 4.5rem 1.5rem;
+  margin: 3rem auto;
+  max-width: 1040px;
+  box-shadow: 0 16px 36px rgba(18, 52, 63, 0.18);
+  position: relative;
+  overflow: hidden;
 }
+
+.contact h2 {
+  font-size: clamp(2.3rem, 5vw, 3.4rem);
+  color: #ffffff;
+  margin-bottom: 0.8rem;
+}
+
 .contact p {
   color: #b9ccd0;
-  margin: 0.6rem auto 2rem;
-  max-width: 28rem;
+  margin: 0 auto 3rem;
+  max-width: 32rem;
+  font-size: 1.05rem;
+}
+
+/* Grilla de tarjetas de contacto */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2.8rem;
+  text-align: left;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1.2rem 1.4rem;
+  border-radius: 0.8rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover:not(.static) {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.card-icon {
+  width: 2.8rem;
+  height: 2.8rem;
+  background: var(--accent);
+  color: var(--deep);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.card-label {
+  display: block;
+  font-size: 0.8rem;
+  color: #b9ccd0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.1rem;
+}
+
+.card-value {
+  display: block;
+  font-size: 0.98rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Botón principal dentro del banner */
+.wide-contact-btn {
+  font-size: 1.1rem;
+  padding: 0.9rem 2.8rem;
+  box-shadow: 0 4px 15px rgba(203, 240, 160, 0.25);
+  transition: all 0.3s ease;
+}
+
+.wide-contact-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 20px rgba(203, 240, 160, 0.4);
 }
 /* ==============================
    FOOTER
