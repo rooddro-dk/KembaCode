@@ -239,53 +239,70 @@ nav > a:hover {
    SLIDE CON IMAGEN
 ============================== */
 
-.photo {
-  background: #0b0c0d;
-}
-.photo,
-.tren,
-.s4 {
-  color: #f6f4f0;
-}
-.photo::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("serpiente.jpg") 50% 38% / cover;
-}
-.tren::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("tren.jpg") 50% 50% / cover;
-}
-.photo::after,
-.tren::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to top, rgba(11, 12, 13, 0.85), transparent 45%),
-    linear-gradient(
-      90deg,
-      rgba(11, 12, 13, 0.75),
-      rgba(11, 12, 13, 0.15) 60%,
-      rgba(11, 12, 13, 0.5)
-    );
-}
+
 /* ==============================
-   COLORES DE SLIDES
+   IMÁGENES DEL CARRUSEL
 ============================== */
 
-.s2 {
-  background: var(--s2);
-}
-.s3 {
-  background: var(--s3);
-}
+.photo,
+.s2,
+.s3,
 .s4 {
-  background: var(--deep);
+  position: relative;
+  color: #f6f4f0;
+  background-color: #0b0c0d;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+/* Imagen de la diapositiva 1 */
+.photo {
+  background-image:
+    linear-gradient(
+      rgba(11, 12, 13, 0.35),
+      rgba(11, 12, 13, 0.65)
+    ),
+    url("imagenes/futurista.png");
+}
+
+/* Imagen de la diapositiva 2 */
+.s2 {
+  background-image:
+    linear-gradient(
+      rgba(11, 12, 13, 0.35),
+      rgba(11, 12, 13, 0.65)
+    ),
+    url("imagenes/photo-1506012787146-f92b2d7d6d96.avif");
+}
+
+/* Imagen de la diapositiva 3 */
+.s3 {
+  background-image:
+    linear-gradient(
+      rgba(11, 12, 13, 0.35),
+      rgba(11, 12, 13, 0.65)
+    ),
+    url("imagenes/premium_photo-1674718013659-6930c469e641.avif");
+}
+
+/* Imagen de la diapositiva 4 */
+.s4 {
+  background-image:
+    linear-gradient(
+      rgba(11, 12, 13, 0.35),
+      rgba(11, 12, 13, 0.65)
+    ),
+    url("imagenes/premium_photo-1676139292936-a2958a0d7177.avif");
+}
+
+/* Mantener visibles los dibujos SVG */
+.s2 .art,
+.s3 .art,
+.s4 .art {
+  stroke: #ffffff;
+}
+
 .s4 .art {
   stroke: #fff;
 }
