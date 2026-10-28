@@ -1159,3 +1159,10 @@ footer {
     bottom: 5.5rem;
   }
 }
+#car .photo {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+        url("./imagenes/futurista.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
