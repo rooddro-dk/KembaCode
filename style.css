@@ -427,24 +427,26 @@ nav > a:hover {
 /* Imagen de la diapositiva 2 */
 
 .s2 {
-  background-image:
-    linear-gradient(
-      rgba(11, 12, 13, 0.35),
-      rgba(11, 12, 13, 0.65)
-    ),
-    url("imagenes/photo-1506012787146-f92b2d7d6d96.avif");
+
+    background-image:
+        linear-gradient(
+            rgba(11, 12, 13, 0.35),
+            rgba(11, 12, 13, 0.65)
+        ),
+        url("imagenes/xdd\ 1.jpg");
 }
 
 
 /* Imagen de la diapositiva 3 */
 
 .s3 {
-  background-image:
-    linear-gradient(
-      rgba(11, 12, 13, 0.35),
-      rgba(11, 12, 13, 0.65)
-    ),
-    url("imagenes/premium_photo-1674718013659-6930c469e641.avif");
+
+    background-image:
+        linear-gradient(
+            rgba(11, 12, 13, 0.35),
+            rgba(11, 12, 13, 0.65)
+        ),
+        url("imagenes/xdd\ 2.jpg");
 }
 
 
@@ -456,16 +458,15 @@ nav > a:hover {
       rgba(11, 12, 13, 0.35),
       rgba(11, 12, 13, 0.65)
     ),
-    url("imagenes/premium_photo-1676139292936-a2958a0d7177.avif");
+    url("imagenes/xdd\ 3.jpg");
 }
 
-
-/* Mantener visibles los dibujos SVG */
-
-.s2 .art,
-.s3 .art,
-.s4 .art {
-  stroke: #ffffff;
+    background-image:
+        linear-gradient(
+            rgba(11, 12, 13, 0.35),
+            rgba(11, 12, 13, 0.65)
+        ),
+        url("imagenes/xdd\ 3.jpg");
 }
 
 .s4 .art {
