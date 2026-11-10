@@ -2096,3 +2096,206 @@ footer {
     }
 
 }
+
+/* =================================
+   SECCIÓN: CÓMO TRABAJAMOS - KEMBACODE
+================================= */
+
+.proceso-kemba {
+    background: #f1efec;
+    color: #092e50;
+    padding: 110px 7%;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.proceso-kemba .proceso-header {
+    max-width: 650px;
+    margin-bottom: 65px;
+}
+
+.proceso-kemba .proceso-etiqueta {
+    color: #6c8d50;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.proceso-kemba h2 {
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+    margin: 0 0 18px;
+    color: #092e50;
+}
+
+.proceso-kemba .proceso-descripcion {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #526477;
+}
+
+/* CONTENEDOR DE TARJETAS */
+
+.proceso-kemba .proceso-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* TARJETAS */
+
+.proceso-kemba .paso-card {
+    position: relative;
+    background: #f8f7f4;
+    border: 1px solid rgba(9, 46, 80, 0.12);
+    border-radius: 16px;
+    padding: 30px 24px;
+    min-height: 285px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.proceso-kemba .paso-card:hover {
+    transform: translateY(-8px);
+    border-color: #a9dc75;
+    box-shadow: 0 18px 40px rgba(9, 46, 80, 0.09);
+}
+
+/* NUMERACIÓN */
+
+.proceso-kemba .paso-numero {
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: -2px;
+    color: #a7d778;
+    margin-bottom: 28px;
+}
+
+/* ICONOS */
+
+.proceso-kemba .paso-icono {
+    width: 43px;
+    height: 43px;
+    border-radius: 12px;
+    background: #e5f4d6;
+    color: #244c35;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    margin-bottom: 25px;
+}
+
+/* TEXTOS */
+
+.proceso-kemba .paso-etapa {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #77915e;
+    margin-bottom: 8px;
+}
+
+.proceso-kemba .paso-card h3 {
+    font-size: 25px;
+    font-weight: 500;
+    margin: 0 0 15px;
+    color: #092e50;
+}
+
+.proceso-kemba .paso-card p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #536579;
+    margin: 0 0 20px;
+}
+
+.proceso-kemba .paso-frase {
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid rgba(9, 46, 80, 0.12);
+    font-size: 12px;
+    color: #77915e;
+}
+
+/* LLAMADA A LA ACCIÓN */
+
+.proceso-kemba .proceso-final {
+    margin-top: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.proceso-kemba .proceso-final p {
+    font-size: 19px;
+    color: #092e50;
+}
+
+.proceso-kemba .proceso-boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 27px;
+    border-radius: 50px;
+    background: #c6ef91;
+    color: #092e50;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.proceso-kemba .proceso-boton:hover {
+    background: #a9df70;
+    transform: translateY(-3px);
+}
+
+/* TABLETS */
+
+@media (max-width: 1000px) {
+    .proceso-kemba .proceso-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+    .proceso-kemba {
+        padding: 75px 6%;
+    }
+
+    .proceso-kemba .proceso-header {
+        margin-bottom: 40px;
+    }
+
+    .proceso-kemba .proceso-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .proceso-kemba .paso-card {
+        min-height: 250px;
+        padding: 25px;
+    }
+
+    .proceso-kemba .proceso-final {
+        margin-top: 40px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .proceso-kemba .proceso-boton {
+        width: fit-content;
+    }
+}
