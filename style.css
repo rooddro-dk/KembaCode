@@ -1867,3 +1867,232 @@ footer {
     }
 
 }
+/* =========================================================
+   COMO TRABAJAMOS
+========================================================= */
+
+.workflow-section {
+    background: var(--s1);
+    overflow: hidden;
+}
+
+
+/* GRID */
+
+.workflow-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 1.2rem;
+
+    position: relative;
+}
+
+
+/* TARJETAS */
+
+.workflow-card {
+    position: relative;
+
+    min-height: 370px;
+
+    padding: 2rem 1.6rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    background: #fbfaf8;
+
+    border: 1px solid var(--line);
+
+    border-radius: 1.2rem;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+
+    overflow: hidden;
+}
+
+
+/* HOVER */
+
+.workflow-card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--accent);
+
+    box-shadow:
+        0 18px 40px
+        rgba(18, 52, 63, 0.10);
+}
+
+
+/* NÚMERO */
+
+.workflow-number {
+    position: absolute;
+
+    top: 1.2rem;
+    right: 1.4rem;
+
+    font-size: 2.8rem;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-weight: 700;
+
+    color: rgba(18, 52, 63, 0.12);
+}
+
+
+/* ICONO */
+
+.workflow-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 2rem;
+
+    border-radius: 50%;
+
+    background: var(--s2);
+
+    color: var(--deep);
+
+    font-size: 2rem;
+
+    transition: transform 0.35s ease;
+}
+
+
+.workflow-card:hover .workflow-icon {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+
+/* ETIQUETA */
+
+.workflow-tag {
+    margin-bottom: 0.8rem;
+
+    color: var(--muted);
+
+    font-size: 0.68rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+}
+
+
+/* TITULO */
+
+.workflow-card h3 {
+    margin-bottom: 0.9rem;
+
+    font-size: 1.9rem;
+
+    color: var(--ink);
+}
+
+
+/* DESCRIPCION */
+
+.workflow-card p {
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 0.92rem;
+
+    line-height: 1.7;
+}
+
+
+/* FRASE FINAL */
+
+.workflow-bottom {
+    margin-top: auto;
+
+    padding-top: 1.5rem;
+
+    color: var(--deep);
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    border-top: 1px solid var(--line);
+
+    width: 100%;
+}
+
+
+/* LLAMADA A LA ACCION */
+
+.workflow-cta {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1.5rem;
+
+    margin-top: 3rem;
+
+    padding: 2rem;
+
+    background: var(--deep);
+
+    color: #ffffff;
+
+    border-radius: 1rem;
+}
+
+
+.workflow-cta p {
+    margin: 0;
+
+    font-size: 1.05rem;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+
+    .workflow-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* MOVIL */
+
+@media (max-width: 800px) {
+
+    .workflow-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow-card {
+        min-height: 320px;
+    }
+
+    .workflow-cta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
