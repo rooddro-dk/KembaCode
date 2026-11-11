@@ -1133,281 +1133,100 @@ nav > a:hover {
 }
 
 /* =========================================================
-   PROYECTOS
+   PROYECTOS 
 ========================================================= */
-
-.projects-list {
-
-    border-top:
-        1px solid
-        var(--line);
-}
-
 
 .project-item {
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 2rem;
-
-    padding:
-        1.6rem
-        0;
-
-    border-bottom:
-        1px solid
-        var(--line);
+    padding: 1.3rem 1rem;
+    border-left: 6px solid transparent;
+    border-radius: 0.6rem;
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
 }
 
-
-.project-info {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 1.5rem;
+.project-item:hover {
+    background: #fbfaf8;
+    border-left-color: var(--accent);
+    transform: translateX(6px);
 }
 
+.project-info { flex: 1; min-width: 0; }
 
-.project-number {
-
-    min-width: 2rem;
-
-    color: var(--muted);
-
-    font-size: 0.8rem;
-
-    font-weight: 700;
-
-    letter-spacing: 0.1em;
-}
-
-
-.project-info h3 {
-
-    margin:
-        0 0 0.3rem;
-
-    font-size: 1.7rem;
-}
-
-
-.project-info p {
-
-    margin: 0;
-
-    color: var(--muted);
-
-    font-size: 0.95rem;
-}
-
-
-.project-status {
-
+/* Imagen */
+.project-thumb {
+    width: 10rem;
+    height: 7rem;
     flex-shrink: 0;
-
-    padding:
-        0.4rem
-        0.9rem;
-
-    border-radius: 999px;
-
-    font-size: 0.78rem;
-
-    font-weight: 700;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.8rem;
+    display: block;
+    transition: transform 0.4s ease;
 }
+.project-thumb.thumb-top { object-position: top; }
+.project-item { overflow: hidden; }
+.project-item:hover .project-thumb { transform: scale(1.05); }
 
+.project-text { min-width: 0; }
 
-.in-progress {
-
-    background: var(--accent);
-
-    color: var(--deep);
-}
-
-
-.delivered {
-
+/* Barra de avance */
+.project-bar {
+    height: 6px;
+    max-width: 20rem;
+    margin-top: 0.9rem;
     background: var(--s3);
-
-    color: var(--deep);
-}
-
-
-/* =========================================================
-   EQUIPO
-========================================================= */
-
-.team-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            3,
-            minmax(
-                0,
-                1fr
-            )
-        );
-
-    gap: 1.5rem;
-}
-
-
-.team-card {
-
-    position: relative;
-
-    min-height: 390px;
-
-    padding:
-        3rem
-        2rem
-        2.5rem;
-
-    background: #ffffff;
-
-    border:
-        1px solid
-        var(--line);
-
-    border-radius: 1.5rem;
-
-    text-align: center;
-
+    border-radius: 999px;
     overflow: hidden;
-
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        border-color 0.35s ease;
 }
-
-
-.team-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: 0;
-
-    right: 0;
-
-    height: 4px;
-
-    background:
-        linear-gradient(
-            90deg,
-            var(--s2),
-            var(--accent),
-            var(--s3)
-        );
-}
-
-
-.team-card:hover {
-
-    transform:
-        translateY(-10px);
-
-    border-color:
-        rgba(
-            18,
-            52,
-            63,
-            0.20
-        );
-
-    box-shadow:
-        0 20px 45px
-        rgba(
-            18,
-            52,
-            63,
-            0.12
-        );
-}
-
-
-/* AVATAR */
-
-.avatar-wrap {
-
-    width: 105px;
-
-    height: 105px;
-
-    margin:
-        0 auto
-        1.5rem;
-}
-
-
-.avatar {
-
-    width: 100%;
-
+.project-bar i {
+    display: block;
+    width: 0%;
     height: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--accent),
-            var(--s2)
-        );
-
-    color: var(--deep);
-
-    font-family:
-        "Cormorant Garamond",
-        Georgia,
-        serif;
-
-    font-size: 2.3rem;
-
-    font-weight: 700;
-
-    border:
-        5px solid
-        #ffffff;
-
-    box-shadow:
-        0 0 0 1px var(--line),
-        0 12px 30px
-        rgba(
-            18,
-            52,
-            63,
-            0.12
-        );
-
-    transition:
-        transform 0.35s ease;
+    background: var(--accent-hover);
+    border-radius: 999px;
 }
 
+/* Etiquetas */
+.project-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+.project-status { white-space: nowrap; }
+.project-status.pending {
+    background: var(--s1);
+    border: 1px solid var(--line);
+    color: var(--deep);
+}
+.project-priority {
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    background: var(--deep);
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
 
-.team-card:hover .avatar {
+/* Tablet / móvil */
+@media (max-width: 800px) {
+    .project-item { gap: 1rem; }
+    .project-meta { flex-direction: row; align-items: flex-start; }
+    .project-info { width: 100%; }
+}
 
-    transform:
-        scale(1.07)
-        rotate(-3deg);
+@media (max-width: 640px) {
+    .project-info { flex-direction: column; gap: 0.9rem; }
+    .project-number { min-width: 0; }
+    .project-thumb { width: 100%; height: 11rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-item, .project-thumb { transition: none; }
 }
 
 
