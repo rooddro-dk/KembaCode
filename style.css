@@ -1132,55 +1132,155 @@ nav > a:hover {
     );
 }
 
-/* ---------- PROYECTOS (base) ---------- */
- 
-.projects-list {
-    border-top: 1px solid var(--line);
-}
- 
+/* =========================================================
+   PROYECTOS 
+========================================================= */
+
 .project-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    border-bottom: 1px solid var(--line);
+    padding: 1.3rem 1rem;
+    border-left: 6px solid transparent;
+    border-radius: 0.6rem;
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
 }
- 
-.project-info {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+
+.project-item:hover {
+    background: #fbfaf8;
+    border-left-color: var(--accent);
+    transform: translateX(6px);
 }
- 
-.project-number {
-    min-width: 2rem;
-    color: var(--muted);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-}
- 
-.project-info h3 {
-    margin: 0 0 0.3rem;
-    font-size: 1.7rem;
-}
- 
-.project-info p {
-    margin: 0;
-    color: var(--muted);
-    font-size: 0.95rem;
-}
- 
-.project-status {
+
+.project-info { flex: 1; min-width: 0; }
+
+/* Imagen */
+.project-thumb {
+    width: 10rem;
+    height: 7rem;
     flex-shrink: 0;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.8rem;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.project-thumb.thumb-top { object-position: top; }
+.project-item { overflow: hidden; }
+.project-item:hover .project-thumb { transform: scale(1.05); }
+
+.project-text { min-width: 0; }
+
+/* Barra de avance */
+.project-bar {
+    height: 6px;
+    max-width: 20rem;
+    margin-top: 0.9rem;
+    background: var(--s3);
+    border-radius: 999px;
+    overflow: hidden;
+}
+.project-bar i {
+    display: block;
+    width: 0%;
+    height: 100%;
+    background: var(--accent-hover);
+    border-radius: 999px;
+}
+
+/* Etiquetas */
+.project-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+.project-status { white-space: nowrap; }
+.project-status.pending {
+    background: var(--s1);
+    border: 1px solid var(--line);
+    color: var(--deep);
+}
+.project-priority {
     padding: 0.4rem 0.9rem;
     border-radius: 999px;
+    background: var(--deep);
+    color: var(--accent);
     font-size: 0.78rem;
     font-weight: 700;
+    white-space: nowrap;
 }
- 
- 
- 
+
+/* Tablet / móvil */
+@media (max-width: 800px) {
+    .project-item { gap: 1rem; }
+    .project-meta { flex-direction: row; align-items: flex-start; }
+    .project-info { width: 100%; }
+}
+
+@media (max-width: 640px) {
+    .project-info { flex-direction: column; gap: 0.9rem; }
+    .project-number { min-width: 0; }
+    .project-thumb { width: 100%; height: 11rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-item, .project-thumb { transition: none; }
+}
+
+
+/* NOMBRE */
+
+.team-card h3 {
+
+    margin:
+        0 0 0.8rem;
+
+    font-size: 1.8rem;
+}
+
+
+/* BADGE */
+
+.badge {
+
+    display: inline-block;
+
+    padding:
+        0.4rem
+        1rem;
+
+    border-radius: 999px;
+
+    background: var(--s3);
+
+    color: var(--deep);
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* DESCRIPCIÓN */
+
+.team-card p {
+
+    max-width: 260px;
+
+    margin:
+        1.5rem auto 0;
+
+    color: var(--muted);
+
+    font-size: 0.92rem;
+
+    line-height: 1.7;
+}
+
 
 /* =========================================================
    CONTACTO
