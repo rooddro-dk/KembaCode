@@ -2388,3 +2388,82 @@ footer {
         width: fit-content;
     }
 }
+
+/* =====================================
+   UNIFICACIÓN DE ESPACIADO KEMBACODE
+===================================== */
+
+#portafolio,
+#como-trabajamos,
+#proyectos,
+#equipo,
+#contacto {
+    padding-top: 85px;
+    padding-bottom: 85px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* FONDOS ALTERNADOS */
+
+#portafolio,
+#proyectos,
+#contacto {
+    background-color: var(--bg);
+}
+
+#como-trabajamos,
+#equipo {
+    background-color: var(--s1);
+}
+
+/* SEPARADORES */
+
+#portafolio,
+#como-trabajamos,
+#proyectos,
+#equipo,
+#contacto {
+    border-top: 1px solid var(--line);
+}
+
+/* CONTENEDORES */
+
+#portafolio .section-container,
+#como-trabajamos .section-container,
+#proyectos .section-container,
+#equipo .colaboradores-container,
+#contacto .section-container {
+    width: min(1100px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+/* ENCABEZADOS */
+
+#portafolio .section-header,
+#como-trabajamos .section-header,
+#proyectos .section-header,
+#equipo .colaboradores-header {
+    margin-bottom: 42px;
+}
+
+/* MÓVILES */
+
+@media (max-width: 800px) {
+    #portafolio,
+    #como-trabajamos,
+    #proyectos,
+    #equipo,
+    #contacto {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    #portafolio .section-container,
+    #como-trabajamos .section-container,
+    #proyectos .section-container,
+    #equipo .colaboradores-container,
+    #contacto .section-container {
+        width: calc(100% - 32px);
+    }
+}
