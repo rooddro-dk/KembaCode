@@ -2984,4 +2984,140 @@ footer {
     .contact-send-options {
         grid-template-columns: 1fr;
     }
+}/* =========================================
+   CORRECCIÓN DE LAS TARJETAS DE CONTACTO
+========================================= */
+
+.contact-send-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+    margin-top: 25px;
+    align-items: stretch;
+}
+
+.contact-send-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 260px;
+
+    padding: 22px;
+
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+
+    box-sizing: border-box;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.contact-send-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(18,52,63,.09);
+}
+
+.send-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+    border-radius: 50%;
+
+    background: var(--s2);
+    color: var(--deep);
+    font-size: 20px;
+}
+
+.send-card-info {
+    width: 100%;
+    min-width: 0;
+}
+
+.send-card-info > span {
+    color: var(--muted);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+}
+
+.send-card-info h4 {
+    margin: 8px 0;
+    color: var(--ink);
+    font-size: 1.35rem;
+    line-height: 1.2;
+}
+
+.send-card-info p {
+    margin: 0;
+    color: var(--muted);
+    font-size: .88rem;
+    line-height: 1.6;
+}
+
+.contact-send-card button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 48px;
+    padding: 12px;
+
+    border: none;
+    border-radius: 50px;
+
+    font-family: inherit;
+    font-size: .85rem;
+    font-weight: 700;
+
+    white-space: normal;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.contact-send-card .send-whatsapp {
+    background: var(--accent);
+    color: var(--deep);
+}
+
+.contact-send-card .send-whatsapp:hover {
+    background: var(--accent-hover);
+}
+
+.contact-send-card .send-email {
+    background: var(--deep);
+    color: #fff;
+}
+
+.contact-send-card .send-email:hover {
+    background: #204b58;
+}
+
+/* Ocultar el campo personalizado cuando no se usa */
+
+#customProjectField[hidden] {
+    display: none !important;
+}
+
+/* Adaptación a pantallas pequeñas */
+
+@media (max-width: 700px) {
+    .contact-send-options {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-send-card {
+        min-height: auto;
+    }
 }
