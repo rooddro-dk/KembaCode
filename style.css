@@ -961,36 +961,25 @@ nav > a:hover {
 
 
 /* =========================================================
-   IMÁGENES
+   IMÁGENES DEL PORTAFOLIO
 ========================================================= */
 
 #portafolio .portfolio-dominios {
-  background-image:
-    url(
-      "https://images.unsplash.com/photo-1557682250-33bd709cbe85?auto=format&fit=crop&w=1200&q=85"
-    );
+    background-image: url("imagenes/01-dominios.png");
 }
 
 #portafolio .portfolio-tienda {
-  background-image:
-    url(
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85"
-    );
+    background-image: url("imagenes/02-tienda-online.png");
 }
 
 #portafolio .portfolio-servicios {
-  background-image:
-    url(
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85"
-    );
+    background-image: url("imagenes/03-servicios.png");
 }
 
 #portafolio .portfolio-reservas {
-  background-image:
-    url(
-      "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=85"
-    );
+    background-image: url("imagenes/04-reservas-y-citas.png");
 }
+
 
 
 /* =========================================================
@@ -1555,6 +1544,35 @@ nav > a:hover {
 /* =========================================================
    CONTACTO
 ========================================================= */
+
+/* SECCIÓN DE CONTACTO */
+
+.contact-section {
+    width: 100%;
+    padding: 7rem 0;
+    margin: 0;
+    background: var(--s1);
+    box-sizing: border-box;
+}
+
+.contact-section .section-container {
+    width: min(1100px, calc(100% - 3rem));
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-section .section-header {
+    max-width: 650px;
+    margin: 0 auto 3.5rem;
+    text-align: center;
+}
+
+.contact-section .contact-grid {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 
 .contact-grid {
 
@@ -2466,4 +2484,20 @@ footer {
     #contacto .section-container {
         width: calc(100% - 32px);
     }
+}
+
+@media (max-width: 800px) {
+
+    .contact-section {
+        padding: 5rem 0;
+    }
+
+    .contact-section .section-container {
+        width: min(100% - 2rem, 600px);
+    }
+
+    .contact-section .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
 }
