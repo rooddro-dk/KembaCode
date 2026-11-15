@@ -2887,3 +2887,101 @@ footer {
         font-size: 2rem;
     }
 }
+/* CONTACTO: DOS CANALES INDEPENDIENTES */
+
+.contact-send-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.contact-send-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background: #fff;
+    transition: .25s ease;
+}
+
+.contact-send-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(18,52,63,.08);
+}
+
+.send-card-icon {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--s2);
+    color: var(--deep);
+    font-size: 1.35rem;
+}
+
+.send-card-info > span {
+    color: var(--muted);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+}
+
+.send-card-info h4 {
+    margin: .4rem 0;
+    color: var(--ink);
+    font-size: 1.25rem;
+}
+
+.send-card-info p {
+    margin: 0;
+    color: var(--muted);
+    font-size: .82rem;
+    line-height: 1.6;
+}
+
+.contact-send-card button {
+    width: 100%;
+    min-height: 3rem;
+    margin-top: auto;
+    padding: .8rem 1rem;
+    border: none;
+    border-radius: 999px;
+    font: inherit;
+    font-size: .82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.contact-send-card .send-whatsapp {
+    background: var(--accent);
+    color: var(--deep);
+}
+
+.contact-send-card .send-email {
+    background: var(--deep);
+    color: white;
+}
+
+.contact-send-card .send-whatsapp:hover {
+    background: var(--accent-hover);
+}
+
+.contact-send-card .send-email:hover {
+    background: #204b58;
+}
+
+#customProjectField[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 600px) {
+    .contact-send-options {
+        grid-template-columns: 1fr;
+    }
+}

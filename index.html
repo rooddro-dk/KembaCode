@@ -869,14 +869,7 @@
                     <div class="form-field">
                         <label for="serviceType">Categoría del portafolio</label>
 
-                        <select id="serviceType" required>
-                            <option value="">Selecciona una categoría</option>
-                            <option value="dominios">Dominios</option>
-                            <option value="tienda">Tienda online</option>
-                            <option value="servicios">Servicios</option>
-                            <option value="reservas">Reservas y citas</option>
-                        </select>
-                    </div>
+<option value="peticion">Petición del cliente</option>
 
                     <div class="form-field">
                         <label for="projectType">¿Qué proyecto deseas realizar?</label>
@@ -892,6 +885,14 @@
                         <select id="serviceMode" required>
                             <option value="Nuevo proyecto">Nuevo proyecto</option>
                             <option value="Mejora de un proyecto existente">Mejora de un proyecto existente</option>
+                            <div class="form-field" id="customProjectField" hidden>
+    <label for="customProject">Describe el proyecto que necesitas</label>
+    <input
+        type="text"
+        id="customProject"
+        placeholder="Ej. Aplicación móvil para mi negocio"
+    >
+</div>
                             <option value="Soporte o asesoría">Soporte o asesoría</option>
                             <option value="Cotización">Solicitar una cotización</option>
                         </select>
@@ -927,15 +928,33 @@
                             Enviar por WhatsApp
                         </button>
 
-                        <button
-                            type="button"
-                            class="send-email"
-                            id="sendEmail"
-                        >
-                            <span>✉</span>
-                            Enviar por correo
-                        </button>
+<div class="contact-send-options">
 
+    <div class="contact-send-card whatsapp-card">
+        <div class="send-card-icon">↗</div>
+        <div class="send-card-info">
+            <span>CONTACTO DIRECTO</span>
+            <h4>Continuar por WhatsApp</h4>
+            <p>Envía tu solicitud directamente a nuestro número.</p>
+        </div>
+        <button type="button" class="send-whatsapp" id="sendWhatsApp">
+            Enviar por WhatsApp →
+        </button>
+    </div>
+
+    <div class="contact-send-card email-card">
+        <div class="send-card-icon">✉</div>
+        <div class="send-card-info">
+            <span>CONTACTO POR CORREO</span>
+            <h4>Escribir un correo</h4>
+            <p>Prepara un correo con los detalles de tu proyecto.</p>
+        </div>
+        <button type="button" class="send-email" id="sendEmail">
+            Enviar por correo →
+        </button>
+    </div>
+
+</div>
                     </div>
 
                     <p class="form-privacy">
