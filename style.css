@@ -1132,52 +1132,238 @@ nav > a:hover {
     );
 }
 
-/* ---------- PROYECTOS (base) ---------- */
- 
-.projects-list {
-    border-top: 1px solid var(--line);
+
+/* =========================================
+   PROYECTOS - KEMBACODE
+========================================= */
+
+#proyectos {
+    background: var(--bg);
+    padding: 7rem 0;
 }
- 
-.project-item {
+
+#proyectos .section-container {
+    max-width: 1100px;
+}
+
+/* ENCABEZADO */
+
+#proyectos .section-header {
+    margin-bottom: 3.5rem;
+}
+
+/* LISTA */
+
+#proyectos .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border: none;
+}
+
+/* TARJETAS */
+
+#proyectos .project-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    border-bottom: 1px solid var(--line);
+
+    padding: 1.5rem;
+
+    background: #fbfaf8;
+    border: 1px solid var(--line);
+    border-radius: 1.2rem;
+
+    transition: transform .3s ease,
+                box-shadow .3s ease,
+                border-color .3s ease;
 }
- 
-.project-info {
+
+#proyectos .project-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+
+    box-shadow:
+        0 15px 35px rgba(18,52,63,.09);
+}
+
+/* INFORMACIÓN */
+
+#proyectos .project-info {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.3rem;
+    flex: 1;
+    min-width: 0;
 }
- 
-.project-number {
+
+/* NÚMERO */
+
+#proyectos .project-number {
     min-width: 2rem;
     color: var(--muted);
-    font-size: 0.8rem;
+    font-size: .8rem;
     font-weight: 700;
-    letter-spacing: 0.1em;
 }
- 
-.project-info h3 {
-    margin: 0 0 0.3rem;
-    font-size: 1.7rem;
-}
- 
-.project-info p {
-    margin: 0;
-    color: var(--muted);
-    font-size: 0.95rem;
-}
- 
-.project-status {
+
+/* IMAGEN */
+
+#proyectos .project-thumb {
+    width: 115px;
+    height: 105px;
     flex-shrink: 0;
-    padding: 0.4rem 0.9rem;
-    border-radius: 999px;
-    font-size: 0.78rem;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: .8rem;
+    background: var(--s1);
+}
+
+/* TEXTO */
+
+#proyectos .project-text {
+    flex: 1;
+    min-width: 0;
+}
+
+#proyectos .project-text h3 {
+    margin: 0 0 .5rem;
+
+    color: var(--ink);
+    font-family: "Instrument Sans", sans-serif;
+
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+#proyectos .project-text p {
+    margin: 0 0 1rem;
+
+    color: var(--muted);
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
+/* BARRA DE PROGRESO */
+
+#proyectos .project-bar {
+    width: 100%;
+    max-width: 350px;
+    height: 6px;
+
+    overflow: hidden;
+    border-radius: 20px;
+
+    background: #e5e3dd;
+}
+
+#proyectos .project-bar i {
+    display: block;
+    width: 0%;
+    height: 100%;
+
+    border-radius: inherit;
+    background: var(--accent);
+
+    transition: width .5s ease;
+}
+
+/* METADATOS */
+
+#proyectos .project-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: .7rem;
+    flex-shrink: 0;
+}
+
+/* ESTADOS */
+
+#proyectos .project-status {
+    padding: .5rem .9rem;
+
+    border-radius: 50px;
+
+    font-size: .75rem;
     font-weight: 700;
 }
+
+#proyectos .project-status.pending {
+    background: #f1e8d5;
+    color: #806329;
+}
+
+/* PRIORIDAD */
+
+#proyectos .project-priority {
+    color: var(--muted);
+    font-size: .78rem;
+    font-weight: 600;
+}
+
+/* TABLETS */
+
+@media (max-width: 800px) {
+
+    #proyectos .project-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    #proyectos .project-meta {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}
+
+/* CELULARES */
+
+@media (max-width: 550px) {
+
+    #proyectos {
+        padding: 5rem 0;
+    }
+
+    #proyectos .project-item {
+        padding: 1rem;
+    }
+
+    #proyectos .project-info {
+        gap: .8rem;
+        flex-wrap: wrap;
+    }
+
+    #proyectos .project-thumb {
+        width: 85px;
+        height: 85px;
+    }
+
+    #proyectos .project-number {
+        min-width: 1.5rem;
+    }
+
+    #proyectos .project-text {
+        flex-basis: 100%;
+    }
+
+    #proyectos .project-text h3 {
+        font-size: 1.15rem;
+    }
+
+    #proyectos .project-meta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
+
  
  
 /* ---------- COLABORADORES ---------- */
