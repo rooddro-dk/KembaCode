@@ -2,13 +2,7 @@
 (function () {
     "use strict";
 
-    /* ========================================
-       CARRUSEL PRINCIPAL
-    ======================================== */
-
     const carousel = document.getElementById("car");
-
-    // Evita errores si el carrusel no existe
     if (!carousel) return;
 
     const track = carousel.querySelector(".track");
@@ -18,7 +12,7 @@
 
     if (!track || !dotsContainer) return;
 
-    const slides = Array.from(track.children);
+    const slides = Array.from(track.querySelectorAll(".slide"));
     const totalSlides = slides.length;
 
     if (totalSlides === 0) return;
@@ -26,51 +20,41 @@
     let currentSlide = 0;
     let timer = null;
 
-    /* ========================================
-       CREAR INDICADORES
-    ======================================== */
-
+    // Crear indicadores
     dotsContainer.innerHTML = "";
 
-    const dots = slides.map(function (_, index) {
+    const dots = slides.map((slide, index) => {
         const dot = document.createElement("button");
 
         dot.type = "button";
-        dot.setAttribute(
-            "aria-label",
-            "Ir a la diapositiva " + (index + 1)
-        );
+        dot.setAttribute("aria-label", "Ir a la diapositiva " + (index + 1));
 
-        dot.addEventListener("click", function () {
+        dot.addEventListener("click", () => {
             goToSlide(index);
             restartCarousel();
         });
 
         dotsContainer.appendChild(dot);
-
         return dot;
     });
 
-    /* ========================================
-       CAMBIAR DIAPOSITIVA
-    ======================================== */
-
+    // Cambiar diapositiva
     function goToSlide(index) {
         currentSlide = (index + totalSlides) % totalSlides;
 
-        track.style.transform =
-            "translateX(-" + (currentSlide * 100) + "%)";
+        const slideWidth = carousel.clientWidth;
 
-        // Actualizar indicadores
-        dots.forEach(function (dot, i) {
+        track.style.transform =
+            `translate3d(-${currentSlide * slideWidth}px, 0, 0)`;
+
+        dots.forEach((dot, i) => {
             dot.setAttribute(
                 "aria-current",
                 i === currentSlide ? "true" : "false"
             );
         });
 
-        // Accesibilidad
-        slides.forEach(function (slide, i) {
+        slides.forEach((slide, i) => {
             if (i === currentSlide) {
                 slide.removeAttribute("inert");
             } else {
@@ -79,19 +63,12 @@
         });
     }
 
-    /* ========================================
-       REPRODUCCIÓN AUTOMÁTICA
-    ======================================== */
-
+    // Reproducción automática
     function playCarousel() {
         stopCarousel();
 
-        if (
-            !window.matchMedia(
-                "(prefers-reduced-motion: reduce)"
-            ).matches
-        ) {
-            timer = setInterval(function () {
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            timer = setInterval(() => {
                 goToSlide(currentSlide + 1);
             }, 6000);
         }
@@ -109,85 +86,63 @@
         playCarousel();
     }
 
-    /* ========================================
-       BOTÓN ANTERIOR
-    ======================================== */
-
+    // Flecha anterior
     if (prevButton) {
-        prevButton.addEventListener("click", function () {
+        prevButton.addEventListener("click", () => {
             goToSlide(currentSlide - 1);
             restartCarousel();
         });
     }
 
-    /* ========================================
-       BOTÓN SIGUIENTE
-    ======================================== */
-
+    // Flecha siguiente
     if (nextButton) {
-        nextButton.addEventListener("click", function () {
+        nextButton.addEventListener("click", () => {
             goToSlide(currentSlide + 1);
             restartCarousel();
         });
     }
 
-    /* ========================================
-       PAUSAR AL PASAR EL MOUSE
-    ======================================== */
-
+    // Pausar al interactuar
     carousel.addEventListener("mouseenter", stopCarousel);
     carousel.addEventListener("mouseleave", playCarousel);
-
-    /* ========================================
-       PAUSAR AL USAR EL TECLADO
-    ======================================== */
-
     carousel.addEventListener("focusin", stopCarousel);
-    carousel.addEventListener("focusout", function (event) {
+
+    carousel.addEventListener("focusout", (event) => {
         if (!carousel.contains(event.relatedTarget)) {
             playCarousel();
         }
     });
 
-    /* ========================================
-       DESLIZAMIENTO TÁCTIL
-    ======================================== */
+    // Adaptar posición al cambiar el tamaño
+    window.addEventListener("resize", () => {
+        goToSlide(currentSlide);
+    });
 
+    // Deslizamiento táctil
     let touchStartX = 0;
     let touchStartY = 0;
 
-    carousel.addEventListener("touchstart", function (event) {
+    carousel.addEventListener("touchstart", (event) => {
         touchStartX = event.touches[0].clientX;
         touchStartY = event.touches[0].clientY;
-
         stopCarousel();
     }, { passive: true });
 
-    carousel.addEventListener("touchend", function (event) {
-        const touchEndX = event.changedTouches[0].clientX;
-        const touchEndY = event.changedTouches[0].clientY;
-
-        const differenceX = touchEndX - touchStartX;
-        const differenceY = touchEndY - touchStartY;
+    carousel.addEventListener("touchend", (event) => {
+        const differenceX = event.changedTouches[0].clientX - touchStartX;
+        const differenceY = event.changedTouches[0].clientY - touchStartY;
 
         if (
             Math.abs(differenceX) > 40 &&
             Math.abs(differenceX) > Math.abs(differenceY)
         ) {
-            if (differenceX < 0) {
-                goToSlide(currentSlide + 1);
-            } else {
-                goToSlide(currentSlide - 1);
-            }
+            goToSlide(currentSlide + (differenceX < 0 ? 1 : -1));
         }
 
         restartCarousel();
     }, { passive: true });
 
-    /* ========================================
-       INICIAR CARRUSEL
-    ======================================== */
-
+    // Iniciar
     goToSlide(0);
     playCarousel();
 
