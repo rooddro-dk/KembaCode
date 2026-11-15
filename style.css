@@ -2594,3 +2594,296 @@ footer {
         transition: none;
     }
 }
+
+/* =========================================
+   CONTACTO INTELIGENTE - KEMBACODE
+========================================= */
+
+.contact-section {
+    background: var(--bg);
+}
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 2rem;
+    align-items: stretch;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* PANEL LATERAL */
+
+.contact-aside {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    overflow: hidden;
+    border-radius: 1.2rem;
+    background: var(--deep);
+    color: #f0eeeb;
+}
+
+.contact-kicker {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.contact-aside h3 {
+    margin: 2.5rem 0 1rem;
+    font-size: clamp(2.5rem, 4vw, 3.7rem);
+    line-height: 0.98;
+}
+
+.contact-aside > p {
+    color: rgba(255,255,255,0.72);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+.contact-detail > span {
+    display: grid;
+    place-items: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(203,240,160,0.13);
+    color: var(--accent);
+    font-size: 1.2rem;
+}
+
+.contact-detail small {
+    display: block;
+    color: rgba(255,255,255,0.58);
+    font-size: 0.72rem;
+    margin-bottom: 0.2rem;
+}
+
+.contact-detail strong {
+    font-size: 0.9rem;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+}
+
+.contact-aside-note {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: auto;
+    padding-top: 2rem;
+    color: rgba(255,255,255,0.65);
+    font-size: 0.78rem;
+}
+
+.contact-aside-note span {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+}
+
+/* PANEL DEL FORMULARIO */
+
+.contact-form-panel {
+    padding: 2.5rem;
+    border: 1px solid var(--line);
+    border-radius: 1.2rem;
+    background: #fbfaf8;
+    box-shadow: 0 20px 60px rgba(18,52,63,0.045);
+}
+
+.form-heading {
+    margin-bottom: 2rem;
+}
+
+.form-heading > span {
+    color: var(--muted);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.form-heading h3 {
+    margin-top: 0.6rem;
+    font-size: 2.3rem;
+}
+
+/* CAMPOS */
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    margin-bottom: 1.3rem;
+}
+
+.form-field label {
+    color: var(--ink);
+    font-size: 0.83rem;
+    font-weight: 600;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 0.95rem 1rem;
+    border: 1px solid var(--line);
+    border-radius: 0.65rem;
+    outline: none;
+    background: #fff;
+    color: var(--ink);
+    font: inherit;
+    font-size: 0.9rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-field textarea {
+    min-height: 150px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    border-color: var(--deep);
+    box-shadow: 0 0 0 3px rgba(18,52,63,0.08);
+}
+
+.form-field select:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.message-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.message-label-row > span {
+    color: #638b3f;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.form-hint {
+    color: var(--muted);
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+/* BOTONES DE ENVÍO */
+
+.form-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.form-actions button {
+    min-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.8rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.form-actions button:hover {
+    transform: translateY(-3px);
+}
+
+.send-whatsapp {
+    background: var(--accent);
+    color: var(--deep);
+}
+
+.send-whatsapp:hover {
+    background: var(--accent-hover);
+}
+
+.send-email {
+    background: var(--deep);
+    color: #fff;
+}
+
+.send-email:hover {
+    background: #204b58;
+}
+
+.form-actions button span {
+    font-size: 1.1rem;
+}
+
+.form-privacy {
+    margin: 1.2rem 0 0;
+    color: var(--muted);
+    font-size: 0.72rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-aside {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-form-panel,
+    .contact-aside {
+        padding: 1.5rem;
+    }
+
+    .form-row,
+    .form-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-aside h3 {
+        margin-top: 1.8rem;
+    }
+
+    .form-heading h3 {
+        font-size: 2rem;
+    }
+}

@@ -357,13 +357,7 @@
                         </div>
 
 
-                        <a
-                            href="#contacto"
-                            class="portfolio-arrow"
-                            aria-label="Ver dominios"
-                        >
-                            →
-                        </a>
+                  <a href="#contacto" class="portfolio-arrow" data-service="dominios" aria-label="Consultar sobre dominios">→</a>
 
                     </article>
 
@@ -389,14 +383,7 @@
 
                         </div>
 
-
-                        <a
-                            href="#contacto"
-                            class="portfolio-arrow"
-                            aria-label="Ver tienda online"
-                        >
-                            →
-                        </a>
+<a href="#contacto" class="portfolio-arrow" data-service="tienda" aria-label="Consultar sobre tienda online">→</a>
 
                     </article>
 
@@ -423,14 +410,7 @@
                         </div>
 
 
-                        <a
-                            href="#contacto"
-                            class="portfolio-arrow"
-                            aria-label="Ver servicios"
-                        >
-                            →
-                        </a>
-
+             <a href="#contacto" class="portfolio-arrow" data-service="servicios" aria-label="Consultar sobre servicios">→</a>
                     </article>
 
 
@@ -456,13 +436,7 @@
                         </div>
 
 
-                        <a
-                            href="#contacto"
-                            class="portfolio-arrow"
-                            aria-label="Ver reservas"
-                        >
-                            →
-                        </a>
+                    <a href="#contacto" class="portfolio-arrow" data-service="reservas" aria-label="Consultar sobre reservas y citas">→</a>
 
                     </article>
 
@@ -795,77 +769,183 @@
      CONTACTO
 ========================== -->
 
+<!-- =========================
+     CONTACTO INTELIGENTE
+========================== -->
+
 <section class="section contact-section" id="contacto">
 
     <div class="section-container">
 
         <div class="section-header">
+            <span class="section-label">CONTACTO</span>
 
-            <span class="section-label">
-                CONTACTO
-            </span>
-
-            <h2>
-                Hablemos de tu próximo proyecto.
-            </h2>
+            <h2>Construyamos algo juntos.</h2>
 
             <p>
-                Estamos listos para escuchar tus ideas
-                y ayudarte a convertirlas en soluciones digitales.
+                Cuéntanos qué necesitas. Selecciona un servicio,
+                elige el proyecto que tienes en mente y prepara
+                tu consulta en unos segundos.
             </p>
-
         </div>
 
-        <div class="contact-grid">
+        <div class="contact-layout">
 
-            <!-- CORREO -->
-            <a href="mailto:Kembacode@gmail.com"
-               class="contact-card">
+            <!-- INFORMACIÓN -->
+            <aside class="contact-aside">
+                <span class="contact-kicker">KEMBACODE / CONTACTO</span>
 
-                <div class="contact-icon">✉</div>
+                <h3>Tu próxima idea empieza aquí.</h3>
 
-                <div>
-                    <span>Correo electrónico</span>
-                    <strong>Kembacode@gmail.com</strong>
+                <p>
+                    Estamos listos para conocer tu propuesta,
+                    resolver tus dudas y ayudarte a encontrar
+                    la solución adecuada.
+                </p>
+
+                <div class="contact-detail">
+                    <span>✉</span>
+                    <div>
+                        <small>Correo electrónico</small>
+                        <strong>Kembacode@gmail.com</strong>
+                    </div>
                 </div>
 
-            </a>
-
-            <!-- WHATSAPP -->
-            <a href="https://wa.me/51994634588"
-               target="_blank"
-               rel="noopener"
-               class="contact-card">
-
-                <div class="contact-icon">📱</div>
-
-                <div>
-                    <span>WhatsApp / Teléfono</span>
-                    <strong>+51 994 463 588</strong>
+                <div class="contact-detail">
+                    <span>↗</span>
+                    <div>
+                        <small>WhatsApp</small>
+                        <strong>+51 994 463 588</strong>
+                    </div>
                 </div>
 
-            </a>
-
-            <!-- UBICACIÓN -->
-            <div class="contact-card">
-
-                <div class="contact-icon">📍</div>
-
-                <div>
-                    <span>Ubicación</span>
-                    <strong>Lima, Perú</strong>
+                <div class="contact-detail">
+                    <span>⌖</span>
+                    <div>
+                        <small>Ubicación</small>
+                        <strong>Lima, Perú</strong>
+                    </div>
                 </div>
+
+                <div class="contact-aside-note">
+                    <span></span>
+                    Responderemos tu consulta lo antes posible.
+                </div>
+            </aside>
+
+            <!-- FORMULARIO -->
+            <div class="contact-form-panel">
+
+                <div class="form-heading">
+                    <span>01 — TU SOLICITUD</span>
+                    <h3>Cuéntanos qué necesitas.</h3>
+                </div>
+
+                <form id="projectContactForm">
+
+                    <div class="form-row">
+
+                        <div class="form-field">
+                            <label for="clientName">Tu nombre</label>
+                            <input
+                                type="text"
+                                id="clientName"
+                                placeholder="¿Cómo te llamas?"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-field">
+                            <label for="clientEmail">Tu correo</label>
+                            <input
+                                type="email"
+                                id="clientEmail"
+                                placeholder="correo@ejemplo.com"
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="form-field">
+                        <label for="serviceType">Categoría del portafolio</label>
+
+                        <select id="serviceType" required>
+                            <option value="">Selecciona una categoría</option>
+                            <option value="dominios">Dominios</option>
+                            <option value="tienda">Tienda online</option>
+                            <option value="servicios">Servicios</option>
+                            <option value="reservas">Reservas y citas</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="projectType">¿Qué proyecto deseas realizar?</label>
+
+                        <select id="projectType" required disabled>
+                            <option value="">Primero selecciona una categoría</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="serviceMode">Tipo de solicitud</label>
+
+                        <select id="serviceMode" required>
+                            <option value="Nuevo proyecto">Nuevo proyecto</option>
+                            <option value="Mejora de un proyecto existente">Mejora de un proyecto existente</option>
+                            <option value="Soporte o asesoría">Soporte o asesoría</option>
+                            <option value="Cotización">Solicitar una cotización</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <div class="message-label-row">
+                            <label for="projectMessage">Tu mensaje</label>
+                            <span>Editable</span>
+                        </div>
+
+                        <textarea
+                            id="projectMessage"
+                            rows="6"
+                            placeholder="Tu mensaje aparecerá aquí..."
+                            required
+                        ></textarea>
+
+                        <small class="form-hint">
+                            Te proponemos un mensaje según la categoría
+                            y el proyecto que selecciones. Puedes modificarlo.
+                        </small>
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button
+                            type="button"
+                            class="send-whatsapp"
+                            id="sendWhatsApp"
+                        >
+                            <span>↗</span>
+                            Enviar por WhatsApp
+                        </button>
+
+                        <button
+                            type="button"
+                            class="send-email"
+                            id="sendEmail"
+                        >
+                            <span>✉</span>
+                            Enviar por correo
+                        </button>
+
+                    </div>
+
+                    <p class="form-privacy">
+                        Se abrirá tu aplicación de mensajería o correo
+                        con los datos preparados para que puedas enviarlos.
+                    </p>
+
+                </form>
 
             </div>
-
-        </div>
-
-        <div class="contact-button">
-
-            <a href="mailto:Kembacode@gmail.com"
-               class="btn">
-                Escríbenos directamente
-            </a>
 
         </div>
 
