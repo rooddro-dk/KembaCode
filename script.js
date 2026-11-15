@@ -245,17 +245,19 @@
             "\n\nMe gustaría conocer los detalles y el proceso de trabajo.";
     }
 
-    function updateProjects() {
-        const selectedCategory = category.value;
-        const available = projects[selectedCategory] || [];
+function updateProjects() {
+    const selectedCategory = category.value;
+    const available = projects[selectedCategory] || [];
 
-        project.innerHTML = "";
+    project.innerHTML = "";
 
+    if (available.length === 0) {
         const placeholder = document.createElement("option");
         placeholder.value = "";
-        placeholder.textContent = "Selecciona un proyecto";
+        placeholder.textContent = "Primero selecciona una categoría";
         project.appendChild(placeholder);
-
+        project.disabled = true;
+    } else {
         available.forEach(item => {
             const option = document.createElement("option");
             option.value = item[0];
@@ -263,24 +265,27 @@
             project.appendChild(option);
         });
 
-        project.disabled = available.length === 0;
-
-        const isCustom = selectedCategory === "peticion";
-
-        if (customField) {
-            customField.hidden = !isCustom;
-        }
-
-        if (customInput) {
-            customInput.required = isCustom;
-
-            if (!isCustom) {
-                customInput.value = "";
-            }
-        }
-
-        updateMessage();
+        // Seleccionar automáticamente el primer proyecto
+        project.disabled = false;
+        project.value = available[0][0];
     }
+
+    const isCustom = selectedCategory === "peticion";
+
+    if (customField) {
+        customField.hidden = !isCustom;
+    }
+
+    if (customInput) {
+        customInput.required = isCustom;
+
+        if (!isCustom) {
+            customInput.value = "";
+        }
+    }
+
+    updateMessage();
+}
 
     category.addEventListener("change", updateProjects);
     project.addEventListener("change", updateMessage);

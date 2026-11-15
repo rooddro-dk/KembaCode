@@ -3159,4 +3159,37 @@ footer {
 #projectContactForm input:focus {
     border-color: var(--deep);
     box-shadow: 0 0 0 3px rgba(18,52,63,.08);
+}/* ORDEN Y ESPACIADO DEL FORMULARIO */
+
+#projectContactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+#projectContactForm .form-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#projectContactForm .form-field label {
+    display: block;
+    margin-bottom: 9px;
+}
+
+#projectContactForm select,
+#projectContactForm input,
+#projectContactForm textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#projectContactForm select:disabled {
+    background: #f0eeeb;
+    cursor: not-allowed;
+    opacity: .65;
+}
+
+#customProjectField[hidden] {
+    display: none !important;
 }
