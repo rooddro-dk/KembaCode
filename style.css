@@ -2501,3 +2501,84 @@ footer {
     }
 
 }
+
+/* ========================================
+   AJUSTES DEL CARRUSEL
+======================================== */
+
+#car {
+    position: relative;
+    overflow: hidden;
+}
+
+#car .track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform .7s ease-in-out;
+    will-change: transform;
+}
+
+#car .slide {
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 100%;
+}
+
+/* ========================================
+   ESTADO DE LOS PROYECTOS
+======================================== */
+
+#proyectos .project-item {
+    flex-direction: row;
+    align-items: center;
+}
+
+#proyectos .project-meta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+}
+
+#proyectos .project-status.ready {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    padding: .6rem 1rem;
+    border-radius: 50px;
+    background: rgba(71, 145, 112, .13);
+    color: #397b5d;
+    font-size: .75rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+#proyectos .project-status.ready::before {
+    content: "✓";
+    font-size: .9rem;
+    font-weight: 800;
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 800px) {
+    #proyectos .project-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #proyectos .project-meta {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #car .track {
+        transition: none;
+    }
+}
