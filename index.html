@@ -866,37 +866,46 @@
 
                     </div>
 
-                    <div class="form-field">
-                        <label for="serviceType">Categoría del portafolio</label>
+ <div class="form-field">
+    <label for="serviceType">1. Categoría del portafolio</label>
 
-<option value="peticion">Petición del cliente</option>
+    <select id="serviceType" required>
+        <option value="">Selecciona una categoría</option>
+        <option value="dominios">Dominios</option>
+        <option value="tienda">Tienda online</option>
+        <option value="servicios">Servicios</option>
+        <option value="reservas">Reservas y citas</option>
+        <option value="peticion">Petición del cliente</option>
+    </select>
+</div>
 
-                    <div class="form-field">
-                        <label for="projectType">¿Qué proyecto deseas realizar?</label>
+<div class="form-field">
+    <label for="projectType">2. ¿Qué proyecto deseas realizar?</label>
 
-                        <select id="projectType" required disabled>
-                            <option value="">Primero selecciona una categoría</option>
-                        </select>
-                    </div>
+    <select id="projectType" required disabled>
+        <option value="">Primero selecciona una categoría</option>
+    </select>
+</div>
 
-                    <div class="form-field">
-                        <label for="serviceMode">Tipo de solicitud</label>
-
-                        <select id="serviceMode" required>
-                            <option value="Nuevo proyecto">Nuevo proyecto</option>
-                            <option value="Mejora de un proyecto existente">Mejora de un proyecto existente</option>
-                            <div class="form-field" id="customProjectField" hidden>
+<div class="form-field" id="customProjectField" hidden>
     <label for="customProject">Describe el proyecto que necesitas</label>
+
     <input
         type="text"
         id="customProject"
         placeholder="Ej. Aplicación móvil para mi negocio"
     >
+<div class="form-field">
+    <label for="serviceMode">3. Tipo de solicitud</label>
+
+    <select id="serviceMode" required>
+        <option value="">Selecciona el tipo de solicitud</option>
+        <option value="Nuevo proyecto">Nuevo proyecto</option>
+        <option value="Mejora de un proyecto existente">Mejora de un proyecto existente</option>
+        <option value="Soporte o asesoría">Soporte o asesoría</option>
+        <option value="Cotización">Solicitar una cotización</option>
+    </select>
 </div>
-                            <option value="Soporte o asesoría">Soporte o asesoría</option>
-                            <option value="Cotización">Solicitar una cotización</option>
-                        </select>
-                    </div>
 
                     <div class="form-field">
                         <div class="message-label-row">
@@ -946,8 +955,6 @@
             Enviar por correo →
         </button>
     </div>
-
-</div>
 
 </div>
                     </div>

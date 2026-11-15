@@ -3120,4 +3120,43 @@ footer {
     .contact-send-card {
         min-height: auto;
     }
+}/* FORMULARIO ORDENADO */
+
+#projectContactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#projectContactForm .form-field {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+#projectContactForm .form-field label {
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+#projectContactForm select,
+#projectContactForm input,
+#projectContactForm textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#projectContactForm select:disabled {
+    background: #f0eeeb;
+    opacity: .65;
+    cursor: not-allowed;
+}
+
+#customProjectField[hidden] {
+    display: none !important;
+}
+
+#projectContactForm select:focus,
+#projectContactForm input:focus {
+    border-color: var(--deep);
+    box-shadow: 0 0 0 3px rgba(18,52,63,.08);
 }
